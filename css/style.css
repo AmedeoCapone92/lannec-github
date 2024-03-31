@@ -1,6 +1,7 @@
-.body{
+#body{
     margin-top: 40px !important;
     color: #1c586e;
+    text-align: justify;
 }
 h1 h2 h3 h4 h5 h6{
     color: #113643;
@@ -111,4 +112,32 @@ h1 h2 h3 h4 h5 h6{
 
 .menu-item {
     width: 100px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+.menu-item:hover {
+    background-color: #b2cbd4;
+    color: #113643 !important; 
+}
+.active {
+    background-color: #113643;
+    color: white !important; 
+}
+.project-preview {
+    border: 1px solid #113643;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#progetti-pubblici-preview {
+    background-image: url('/images/progetti-pubblici/pubblici-esempio-preview.png');
+}
+#progetti-privati-preview{
+    background-image: url('/images/progetti-privati/privati-esempio-preview.png');
+}
+#gare-preview{
+    background-image: url('/images/gare/gara-esempio-preview.png');
 }

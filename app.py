@@ -1,20 +1,33 @@
+from flask import send_from_directory, Flask
 
-
-from flask import Flask, send_from_directory
 # creates a Flask application, named app
 app = Flask(__name__)
 
+# Serve static files from the 'static' directory
+app.static_folder = 'static'
 
 # a route where we will display a welcome message via an HTML template
 @app.route("/")
 def index():
     return send_from_directory('.', 'index.html')
 
-
+# Catch-all route to serve index.html for any other URL
 @app.route('/<path:path>')
-def send_static(path):
-    return send_from_directory('.', path)
+def catch_all(path):
+    return send_from_directory('.', 'index.html')
 
+# Serve static files (e.g., images, CSS, JS) from the respective directories
+@app.route('/images/<path:filename>')
+def serve_images(filename):
+    return send_from_directory('images', filename)
+
+@app.route('/css/<path:filename>')
+def serve_css(filename):
+    return send_from_directory('css', filename)
+
+@app.route('/js/<path:filename>')
+def serve_js(filename):
+    return send_from_directory('js', filename)
 
 # run the application
 if __name__ == "__main__":

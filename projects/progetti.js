@@ -1,7 +1,9 @@
 
 
 PROJECTS = {
-    'gare': [],
+    'gare': [
+        'gara-esempio'
+    ],
     'progetti-publici': [],
     'progetti-privati': [],
 }
