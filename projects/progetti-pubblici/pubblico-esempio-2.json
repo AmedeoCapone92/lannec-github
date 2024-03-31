@@ -1,0 +1,32 @@
+{
+    "title": "Progetto Pubblici Esempio 2",
+    "subtitle": "Sottotilo",
+    "preview": "images/gare/gara-esempio-preview.png",
+    "metadata": {
+        "LOCATION": "CASTRI DI LECCE",
+        "YEAR": "2023",
+        "DESIGNED BY": "ARCH.\nAMEDEO CAPONE\n\nLANDSCAPE DESIGNED\nMARCO STIASI"
+    },
+    "content": [
+        {
+            "type": "text",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+        },
+        {
+            "type": "image",
+            "content": "images/gare/gara-esempio-2.png"
+        },
+        {
+            "type": "text",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+        },
+        {
+            "type": "image",
+            "content": "images/gare/gara-esempio-3.png"
+        },
+        {
+            "type": "text",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+        }
+    ]
+}

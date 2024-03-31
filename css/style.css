@@ -4,7 +4,7 @@
     text-align: justify;
 }
 h1 h2 h3 h4 h5 h6{
-    color: #113643;
+    color: #123743;
 }
 
 .grid-container {
@@ -21,18 +21,18 @@ h1 h2 h3 h4 h5 h6{
     padding: 20px;
     text-align: center;
     aspect-ratio: 1/1;
-    border-top: 1px solid #113643;
-    border-left: 1px solid #113643;
+    border-top: 1px solid #123743;
+    border-left: 1px solid #123743;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .border-right {
-    border-right: 1px solid #113643;
+    border-right: 1px solid #123743;
 }
 .border-down {
-    border-bottom: 1px solid #113643;
+    border-bottom: 1px solid #123743;
 }
 
 
@@ -68,7 +68,8 @@ h1 h2 h3 h4 h5 h6{
 
   .navbar .menu a {
     color: #000;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-decoration: none;
   }
 
@@ -115,17 +116,52 @@ h1 h2 h3 h4 h5 h6{
     height: 60px;
     text-align: center;
     line-height: 60px;
+    color: #123743;
 }
 .menu-item:hover {
     background-color: #b2cbd4;
-    color: #113643 !important; 
+    color: #123743 !important; 
 }
 .active {
-    background-color: #113643;
+    background-color: #123743;
     color: white !important; 
 }
+.submenu-active {
+    background-color: #1c586e;
+    color: white !important; 
+}
+.navbar .menu .menu-item {
+    position: relative; /* Needed for submenu positioning */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff; /* Submenu background color */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: adds a shadow */
+    z-index: 200;
+}
+
+.submenu a {
+    display: block;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: #f1f1f1;
+}
+
+.menu-item:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+
 .project-preview {
-    border: 1px solid #113643;
+    border: 1px solid #123743;
     aspect-ratio: 1/1;
     background-size: cover;
     background-position: center;
@@ -140,4 +176,8 @@ h1 h2 h3 h4 h5 h6{
 }
 #gare-preview{
     background-image: url('/images/gare/gara-esempio-preview.png');
+}
+
+.content-section {
+    padding-right: 40px !important;
 }

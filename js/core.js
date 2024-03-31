@@ -13,10 +13,8 @@ $(document).ready(function() {
         $('#body').html(home());
     } else if (window.location.pathname == '/about') {
         $('#body').html(about());
-    } else if (window.location.pathname == '/projects') {
-        $('#body').html(projects());
     } else if (window.location.pathname == '/progetti-pubblici') {
-
+        $('#body').html(progetti_pubblici());
     } else if (window.location.pathname == '/progetti-privati') {
 
     } else if (window.location.pathname == '/gare') {
@@ -32,17 +30,12 @@ function home(){
     $('#menu-item-home').addClass('active');
     $('#menu-item-about').removeClass('active');
     $('#menu-item-projects').removeClass('active');
+    $('#menu-item-pubblici').removeClass('submenu-active');
+    $('#menu-item-privati').removeClass('submenu-active');
+    $('#menu-item-gare').removeClass('submenu-active');
 
     return `<div class="col-sm-6 col-12 content-section">
-    <header>
-        <div style="display: flex; align-items: center;">
-            <div style="margin-right: 10px;">[icon]</div>
-            <div style="flex: 1;">
-                <h1>LANNEC STUDIO</h1>
-                <p>AL VOSTRO FIANCO E UN PASSO INDIETRO</p>
-            </div>
-        </div>
-    </header>
+    ${header('LANNEC STUDIO')}
       
       <section id="mission">
         <h2>OUR MISSION!</h2>
@@ -53,7 +46,7 @@ function home(){
       <section id="find-us">
         <h2>FIND US!</h2>
         <address>
-          <p>Castri di Lecce, via Papa Giovanni XXIII, 64 73020</p>
+          <p><img src="/images/map-pin.svg">Castri di Lecce, via Papa Giovanni XXIII, 64 73020</p>
           <p>Lecce, Via Duca d'Aosta, 44 73100</p>
           <p>Phone: +39 328 5786003</p>
           <p>C.F./P.Iva 05130990756</p>
@@ -63,7 +56,8 @@ function home(){
 </div>
 <div class="col-sm-6 col-12 grid-section">
     <div class="grid-container">
-        <div class="grid-cell"></div>
+        <div class="grid-cell">
+        </div>
         <div class="grid-cell"></div>
         <a href="/gare"><div class="grid-cell border-right">GARE</div></a>
         <a href="/progetti-pubblici"><div class="grid-cell">PROGETTI PUBBLICI</div></a>
@@ -80,17 +74,15 @@ function about(){
     $('#menu-item-home').removeClass('active');
     $('#menu-item-about').addClass('active');
     $('#menu-item-projects').removeClass('active');
+    $('#menu-item-pubblici').removeClass('submenu-active');
+    $('#menu-item-privati').removeClass('submenu-active');
+    $('#menu-item-gare').removeClass('submenu-active');
 
     return `
     <div class="col-sm-2 col-md-3 col-0"></div>
     <div class="col-sm-8 col-md-6 col-12 content-section">
-        <div style="display: flex; align-items: center;">
-            <div style="margin-right: 10px;">[icon]</div>
-            <div style="flex: 1;">
-                <h1>LANNEC STUDIO</h1>
-                <p>AL VOSTRO FIANCO E UN PASSO INDIETRO</p>
-            </div>
-        </div>
+        ${header('LANNEC STUDIO')}
+
         <section id="mission">
             <h2>OUR MISSION!</h2>
             <p>La missione è fare architettura e non edilizia, in tempi rapidi e con l'uso di software all'avanguardia, trasporre nel contemporaneo i principi di bellezza, solidità e funzionalità, attraverso la ricerca tecnologica ed estetica continua, in dialogo con il corso dei tempi.</p>
@@ -133,29 +125,36 @@ function about(){
 }
 
 
+function header(title){
+    return `<header>
+    <div style="display: flex; align-items: center;">
+        <div style="margin-right: 10px; width:60px"><img src="/images/logo.svg"></div>
+        <div style="flex: 1;">
+            <h1 style="margin-bottom:0px">${title}</h1>
+            <p>AL VOSTRO FIANCO E UN PASSO INDIETRO</p>
+        </div>
+    </div>
+</header>`;
+}
 
-function projects(){
+
+function progetti_pubblici(){
     $('#menu-item-home').removeClass('active');
     $('#menu-item-about').removeClass('active');
     $('#menu-item-projects').addClass('active');
+    $('#menu-item-pubblici').addClass('submenu-active');
+    $('#menu-item-privati').removeClass('submenu-active');
+    $('#menu-item-gare').removeClass('submenu-active');
 
     return `
     <div class="row" style="margin-bottom:20px">
         <div class="col-sm-6 col-12 content-section">
-            <header>
-                <div style="display: flex; align-items: center;">
-                    <div style="margin-right: 10px;">[icon]</div>
-                    <div style="flex: 1;">
-                        <h1>LANNEC STUDIO</h1>
-                        <p>AL VOSTRO FIANCO E UN PASSO INDIETRO</p>
-                    </div>
-                </div>
-            </header>
+        ${header('Progetti Pubblici')}
         
-        <section id="mission">
-            <h2>OUR MISSION!</h2>
-            <p>La missione è fare architettura e non edilizia, in tempi rapidi e con l'uso di software all'avanguardia, trasporre nel contemporaneo i principi di bellezza, solidità e funzionalità, attraverso la ricerca tecnologica ed estetica continua, in dialogo con il corso dei tempi.</p>
-            <p>L'azienda lavora su tre rami, la progettazione per enti pubblici, la partecipazione a gare d'appalto per imprese e l'esecuzione di commesse medio-grandi per committenti privati. Lo studio affronta il processo architettonico ed ingegneristico a tutto tondo, dall'analisi dei fabbisogni con un approccio psicologico al collaudo finale delle opere realizzate.</p>
+        <section>
+            <h2>Lorem Ipsum</h2>
+            <p>adskjna sddsajkas dkjn dsa</p>
+            <p>asd jnasd kjdnas kjadsn  ads.</p>
         </section>
         </div>
         <div class="col-sm-6 col-12 grid-section">
