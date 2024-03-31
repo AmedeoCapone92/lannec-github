@@ -137,6 +137,16 @@ function header(title){
 </header>`;
 }
 
+function link_progetto(progetto){
+    return `<a href="/progetto/${progetto.id}">
+    <div class="project-preview">
+        <img src="${progetto.preview}" alt="${progetto.title}">
+        <h3>${progetto.title}</h3>
+        <p>${progetto.description}</p>
+    </div>
+</a>`;
+}
+
 
 function progetti_pubblici(){
     $('#menu-item-home').removeClass('active');
@@ -145,6 +155,10 @@ function progetti_pubblici(){
     $('#menu-item-pubblici').addClass('submenu-active');
     $('#menu-item-privati').removeClass('submenu-active');
     $('#menu-item-gare').removeClass('submenu-active');
+
+    var progetto = PROJECTS['progetti-publici'][0];
+    console.log(progetto);
+    
 
     return `
     <div class="row" style="margin-bottom:20px">

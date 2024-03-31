@@ -3,10 +3,24 @@
     color: #1c586e;
     text-align: justify;
 }
-h1 h2 h3 h4 h5 h6{
+h1{
     color: #123743;
 }
-
+h2{
+    color: #123743;
+}
+h3{
+    color: #123743;
+}
+h4{
+    color: #123743;
+}
+h5{
+    color: #123743;
+}
+h6{
+    color: #123743;
+}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

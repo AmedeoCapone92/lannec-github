@@ -29,6 +29,16 @@ def serve_css(filename):
 def serve_js(filename):
     return send_from_directory('js', filename)
 
+@app.route('/progetti/<path:filename>')
+def serve_projects(filename):
+    return send_from_directory('progetti', filename)
+
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('.', 'robots.txt')
+
+
 # run the application
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5002, debug=True)
