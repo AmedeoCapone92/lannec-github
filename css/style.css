@@ -2,6 +2,10 @@
     margin-top: 40px !important;
     color: #1c586e;
     text-align: justify;
+    word-wrap: break-word; /* or overflow-wrap: break-word; */
+    hyphens: auto;
+    /* Ensure the language is set for hyphenation to work correctly */
+    lang: it;
 }
 h1{
     color: #123743;
@@ -181,6 +185,10 @@ h6{
     background-position: center;
     background-repeat: no-repeat;
 }
+.project-preview:hover {
+    /* blue opacity over background */
+    background-color: rgba(0, 0, 255, 0.5) !important; 
+}
 
 #progetti-pubblici-preview {
     background-image: url('/images/progetti-pubblici/pubblici-esempio-preview.png');
@@ -194,4 +202,60 @@ h6{
 
 .content-section {
     padding-right: 40px !important;
+}
+
+.preview-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 1px solid #123743;
+    aspect-ratio: 1/1;
+}
+
+.preview-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18,55, 67, 0.5); /* Semi-transparent blue */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.preview-container:hover::after {
+    opacity: 1;
+}
+.project-title-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.project-title {
+    color: black;
+    font-size: 2em; /* Base font size for the container */
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+}
+
+.project-subtitle {
+    color: black;
+    font-size: 1.4em; /* Base font size for the container */
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+    margin-top: 1vw; /* Adjust as needed for spacing between title and subtitle */
+}
+
+.preview-container:hover .project-title {
+    opacity: 1;
+}
+.preview-container:hover .project-subtitle {
+    opacity: 1;
 }

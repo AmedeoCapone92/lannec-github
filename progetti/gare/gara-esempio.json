@@ -2,6 +2,7 @@
     "title": "Gara Esempio",
     "subtitle": "Sottotilo",
     "preview": "images/gare/gara-esempio-preview.png",
+    "link": "gare/gara-esempio",
     "metadata": {
         "LOCATION": "CASTRI DI LECCE",
         "YEAR": "2023",

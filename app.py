@@ -33,7 +33,6 @@ def serve_js(filename):
 def serve_projects(filename):
     return send_from_directory('progetti', filename)
 
-
 @app.route('/robots.txt')
 def robots():
     return send_from_directory('.', 'robots.txt')

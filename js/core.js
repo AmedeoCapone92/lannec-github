@@ -14,7 +14,7 @@ $(document).ready(function() {
     } else if (window.location.pathname == '/about') {
         $('#body').html(about());
     } else if (window.location.pathname == '/progetti-pubblici') {
-        $('#body').html(progetti_pubblici());
+        progetti_pubblici();
     } else if (window.location.pathname == '/progetti-privati') {
 
     } else if (window.location.pathname == '/gare') {
@@ -137,16 +137,29 @@ function header(title){
 </header>`;
 }
 
-function link_progetto(progetto){
-    return `<a href="/progetto/${progetto.id}">
-    <div class="project-preview">
-        <img src="${progetto.preview}" alt="${progetto.title}">
-        <h3>${progetto.title}</h3>
-        <p>${progetto.description}</p>
-    </div>
-</a>`;
-}
+// function link_progetto(progetto){
+//     return `<a href="/progetto/${progetto.id}">
+//     <div class="project-preview">
+//         <img src="${progetto.preview}" alt="${progetto.title}">
+//         <h3>${progetto.title}</h3>
+//         <p>${progetto.description}</p>
+//     </div>
+// </a>`;
+// }
 
+function preview_progetto(title, subtitle, link, preview){
+    return `
+    <div class="col-sm-6 col-12 grid-section">
+        <a href="${link}">
+        <div class="preview-container" style="background-image: url('/${preview}')">
+            <div class="project-title-container">
+                <div class="project-title">${title}</div>
+                <div class="project-subtitle">${subtitle}</div>
+            </div>
+        </div>
+        </a>
+    </div>`;
+}
 
 function progetti_pubblici(){
     $('#menu-item-home').removeClass('active');
@@ -156,34 +169,39 @@ function progetti_pubblici(){
     $('#menu-item-privati').removeClass('submenu-active');
     $('#menu-item-gare').removeClass('submenu-active');
 
-    var progetto = PROJECTS['progetti-publici'][0];
-    console.log(progetto);
-    
+    // var project_filename = PROJECTS['progetti-publici'][0];
 
-    return `
-    <div class="row" style="margin-bottom:20px">
-        <div class="col-sm-6 col-12 content-section">
-        ${header('Progetti Pubblici')}
-        
-        <section>
-            <h2>Lorem Ipsum</h2>
-            <p>adskjna sddsajkas dkjn dsa</p>
-            <p>asd jnasd kjdnas kjadsn  ads.</p>
-        </section>
-        </div>
-        <div class="col-sm-6 col-12 grid-section">
-            <div id="progetti-pubblici-preview" class="project-preview">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-12 grid-section">
-            <div id="progetti-privati-preview" class="project-preview">
-            </div>
-        </div>
-        <div class="col-sm-6 col-12 grid-section">
-            <div id="gare-preview" class="project-preview">
-            </div>
-        </div>
-    </div>`;
+    Promise.all(PROJECTS['progetti-publici'].map(filename => fetchProject('progetti-pubblici', filename)))
+        .then(pubblici => {
+            var project = pubblici[0];
+            // Process the combined data as needed
+            var html = `
+            <div class="row" style="margin-bottom:20px">
+                <div class="col-sm-6 col-12 content-section">
+                ${header('Progetti Pubblici')}
+                
+                <section>
+                    <h2>Lorem Ipsum</h2>
+                    <p>adskjna sddsajkas dkjn dsa</p>
+                    <p>asd jnasd kjdnas kjadsn  ads.</p>
+                </section>
+                </div>
+                
+                ${preview_progetto(project.title, project.subtitle, project.link, project.preview)}
+            </div>`;
+            for (var i = 1; i < pubblici.length; i+=2) {
+                project = pubblici[i];
+                html += `<div class="row">`;
+                html += preview_progetto(project.title, project.subtitle, project.link, project.preview);
+                project = pubblici[i+1];
+                if (project) {
+                    html += preview_progetto(project.title, project.subtitle, project.link, project.preview);
+                }
+                html += `</div>`;
+            }
+            $('#body').html(html);
+        })
+        .catch(error => {
+            console.error("Error fetching or parsing JSON files:", error);
+        });
 }
