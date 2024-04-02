@@ -11,11 +11,6 @@ app.static_folder = 'static'
 def index():
     return send_from_directory('.', 'index.html')
 
-# Catch-all route to serve index.html for any other URL
-@app.route('/<path:path>')
-def catch_all(path):
-    return send_from_directory('.', 'index.html')
-
 # Serve static files (e.g., images, CSS, JS) from the respective directories
 @app.route('/images/<path:filename>')
 def serve_images(filename):
@@ -37,6 +32,11 @@ def serve_projects(filename):
 def robots():
     return send_from_directory('.', 'robots.txt')
 
+
+# Catch-all route to serve index.html for any other URL
+@app.route('/<path:path>')
+def catch_all(path):
+    return send_from_directory('.', '404.html')
 
 # run the application
 if __name__ == "__main__":
