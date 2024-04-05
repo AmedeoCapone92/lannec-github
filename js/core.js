@@ -14,12 +14,12 @@ $(document).ready(function() {
     } else if (window.location.pathname == '/about') {
         $('#body').html(about());
     } else if (window.location.pathname == '/progetti-pubblici') {
-        progetti_pubblici();
+        projects_page('progetti-pubblici', 'Progetti Pubblici');
     } else if (window.location.pathname == '/progetti-privati') {
-
+        projects_page('progetti-privati', 'Progetti Privati');
     } else if (window.location.pathname == '/gare') {
-        
-    } else if (window.location.pathname.startsWith('/progetti-pubblici/')) {
+        projects_page('gare', 'Gare');
+    } else if (window.location.pathname.startsWith('/progetti-pubblici/') || window.location.pathname.startsWith('/progetti-privati/') || window.location.pathname.startsWith('/gare/')){
         project_page(window.location.pathname);
     } else {
         // redirect to home

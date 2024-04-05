@@ -1,11 +1,13 @@
 PROJECTS = {
-    'progetti-publici': [
+    'progetti-pubblici': [
         'pubblico-esempio.json',
         'pubblico-esempio-2.json',
         'pubblico-esempio-3.json',
     ],
-    'progetti-privati': [],
+    'progetti-privati': [
+        'ciao.json',
+    ],
     'gare': [
-        'gara-esempio'
+        'gara-esempio.json'
     ],
 }

@@ -14,7 +14,22 @@ function preview_progetto(title, subtitle, link, preview){
     </div>`;
 }
 
-function progetti_pubblici(){
+PROJECTS_PAGE_CONTENT = {
+    'progetti-pubblici': `
+        <h2>Lorem Ipsum</h2>
+        <p>adskjna sddsajkas dkjn dsa</p>
+        <p>asd jnasd kjdnas kjadsn  ads.</p>`,
+    'progetti-privati': `
+        <h2>Lorem Ipsum</h2>
+        <p>adskjna sddsajkas dkjn dsa</p>
+        <p>asd jnasd kjdnas kjadsn  ads.</p>`,
+    'gare': `
+        <h2>Lorem Ipsum</h2>
+        <p>adskjna sddsajkas dkjn dsa</p>
+        <p>asd jnasd kjdnas kjadsn  ads.</p>`
+}
+
+function projects_page(category, title){
     $('#menu-item-home').removeClass('active');
     $('#menu-item-about').removeClass('active');
     $('#menu-item-projects').addClass('active');
@@ -24,31 +39,29 @@ function progetti_pubblici(){
 
     // var project_filename = PROJECTS['progetti-publici'][0];
 
-    Promise.all(PROJECTS['progetti-publici'].map(filename => fetchProject('progetti-pubblici', filename)))
+    Promise.all(PROJECTS[category].map(filename => fetchProject(category, filename)))
         .then(pubblici => {
             var project = pubblici[0];
             // Process the combined data as needed
             var html = `
             <div class="row" style="margin-bottom:20px">
                 <div class="col-sm-6 col-12 content-section">
-                ${header('Progetti Pubblici')}
+                ${header(title)}
                 
                 <section>
-                    <h2>Lorem Ipsum</h2>
-                    <p>adskjna sddsajkas dkjn dsa</p>
-                    <p>asd jnasd kjdnas kjadsn  ads.</p>
+                    ${PROJECTS_PAGE_CONTENT[category]}
                 </section>
                 </div>
                 
-                ${preview_progetto(project.title, project.subtitle, 'progetti-pubblici/' + PROJECTS['progetti-publici'][0].split('.json')[0], project.preview)}
+                ${preview_progetto(project.title, project.subtitle, category + '/' + PROJECTS[category][0].split('.json')[0], project.preview)}
             </div>`;
             for (var i = 1; i < pubblici.length; i+=2) {
                 project = pubblici[i];
                 html += `<div class="row">`;
-                html += preview_progetto(project.title, project.subtitle, 'progetti-pubblici/' + PROJECTS['progetti-publici'][i].split('.json')[0], project.preview);
+                html += preview_progetto(project.title, project.subtitle, category + '/' + PROJECTS[category][i].split('.json')[0], project.preview);
                 project = pubblici[i+1];
                 if (project) {
-                    html += preview_progetto(project.title, project.subtitle, 'progetti-pubblici/' + PROJECTS['progetti-publici'][i+1].split('.json')[0], project.preview);
+                    html += preview_progetto(project.title, project.subtitle, category + '/' + PROJECTS[category][i+1].split('.json')[0], project.preview);
                 }
                 html += `</div>`;
             }
