@@ -259,3 +259,28 @@ h6{
 .preview-container:hover .project-subtitle {
     opacity: 1;
 }
+
+.project-container {
+    display: flex;
+}
+.project-container .left, .project-container .right {
+    flex-basis: 30%;
+}
+.project-container .middle {
+    flex-grow: 1;
+    height: calc(100vh - 120px); /* 100% of the viewport height minus 50 pixels */
+    overflow-y: auto; /* Enables vertical scroll */
+}
+
+/* Media query for small screens */
+@media (max-width: 700px) {
+    .project-container {
+        flex-direction: column;
+    }
+    .project-container .left {
+        display: none; /* Hide the left div */
+    }
+    .project-container .middle, .project-container .right {
+        flex-basis: 100%; /* Take full width */
+    }
+}
