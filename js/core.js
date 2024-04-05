@@ -19,6 +19,8 @@ $(document).ready(function() {
         projects_page('progetti-privati', 'Progetti Privati');
     } else if (window.location.pathname == '/gare') {
         projects_page('gare', 'Gare');
+    } else if (window.location.pathname == '/news') {
+        news_page();
     } else if (window.location.pathname.startsWith('/progetti-pubblici/') || window.location.pathname.startsWith('/progetti-privati/') || window.location.pathname.startsWith('/gare/')){
         project_page(window.location.pathname);
     } else {
@@ -31,6 +33,7 @@ $(document).ready(function() {
 function home(){
     $('#menu-item-home').addClass('active');
     $('#menu-item-about').removeClass('active');
+    $('#menu-item-news').removeClass('active');
     $('#menu-item-projects').removeClass('active');
     $('#menu-item-pubblici').removeClass('submenu-active');
     $('#menu-item-privati').removeClass('submenu-active');
@@ -70,4 +73,32 @@ function home(){
         <div class="grid-cell border-right border-down"></div>
     </div>
 </div>`;
+}
+
+
+function news_page(){
+    $('#menu-item-home').removeClass('active');
+    $('#menu-item-about').removeClass('active');
+    $('#menu-item-projects').removeClass('active');
+    $('#menu-item-news').addClass('active');
+    $('#menu-item-pubblici').removeClass('submenu-active');
+    $('#menu-item-privati').removeClass('submenu-active');
+    $('#menu-item-gare').removeClass('submenu-active');
+
+    var html = `<div class="row">
+        <div class="col-sm-2 col-md-3 col-0"></div>
+        <div class="col-sm-8 col-md-6 col-12 content-section">
+            <h1>News</h1><br><br>
+            <div class="news-container">`;
+    for (var i = 0; i < NEWS.length; i++) {
+        var news = NEWS[i];
+        html += `
+        <a href="${news.link}" class="news">
+            <h3>${news.title}</h3>
+            <img src="/${news.preview}" alt="${news.title}" style="width:100%">
+            <p>${news.content}</p>
+        </a>`;
+    };
+    html += `</div></div></div>`;
+    $('#body').html(html);
 }

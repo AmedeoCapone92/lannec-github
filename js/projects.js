@@ -29,9 +29,11 @@ PROJECTS_PAGE_CONTENT = {
         <p>asd jnasd kjdnas kjadsn  ads.</p>`
 }
 
+
 function projects_page(category, title){
     $('#menu-item-home').removeClass('active');
     $('#menu-item-about').removeClass('active');
+    $('#menu-item-news').removeClass('active');
     $('#menu-item-projects').addClass('active');
     $('#menu-item-pubblici').addClass('submenu-active');
     $('#menu-item-privati').removeClass('submenu-active');

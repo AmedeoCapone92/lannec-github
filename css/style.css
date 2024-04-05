@@ -284,3 +284,20 @@ h6{
         flex-basis: 100%; /* Take full width */
     }
 }
+
+.news-container {
+    border: 1px solid #123743;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.news-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.news-container a:hover {
+    text-decoration: none;
+    color: black;
+}
