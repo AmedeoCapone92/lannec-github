@@ -9,6 +9,6 @@ PROJECTS = {
     ],
     'gare': [
         'gara-esempio.json',
-        'portaerei.json'
+        'portarei.json'
     ],
 }
