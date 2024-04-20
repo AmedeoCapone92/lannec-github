@@ -103,7 +103,18 @@ function home(){
             </div>
         </div>
         </a>
-        <a href="/progetti-pubblici"><div class="grid-cell">PROGETTI PUBBLICI</div></a>
+        <a href="/progetti-pubblici">
+            <div id="cube-container" class="grid-cell">
+                <div id="cube-scene" class="cube-scene">
+                    <div id="cube" class="cube show-front">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--right">
+                            PROGETTI PUBBLICI
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
         <div class="grid-cell"></div>
         <div class="grid-cell border-right"></div>
         <div class="grid-cell border-down"></div>
