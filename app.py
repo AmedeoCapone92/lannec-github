@@ -33,6 +33,11 @@ def robots():
     return send_from_directory('.', 'robots.txt')
 
 
+@app.route('/page-flip.html')
+def page_flip():
+    return send_from_directory('.', 'page-flip.html')
+
+
 # Catch-all route to serve index.html for any other URL
 @app.route('/<path:path>')
 def catch_all(path):

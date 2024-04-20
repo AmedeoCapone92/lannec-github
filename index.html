@@ -15,6 +15,7 @@
 
         <link rel="shortcut icon" type="image/png" href="/images/logo.svg"/>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/flip-page.css">
         <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         
@@ -57,8 +58,11 @@
             
             
             <div id="body" class="row"></div>
-        </div>
 
+            
+            <!-- https://cssdeck.com/labs/pure-css3-page-flip-effect -->
+
+        </div>
         <script src="/js/lib/jquery-3.7.0.js"></script>
         <script src="/js/lib/bootstrap.bundle.min.js"></script>
         <script src="/js/core.js"></script>
@@ -67,5 +71,22 @@
         <script src="/js/about.js"></script>
         <script src="/progetti/progetti.js"></script>
         <script src="/progetti/news.js"></script>
+        <script>
+            function scalePageFlip() {
+                var container = document.getElementById('all');
+                var pageFlip = document.getElementById('page-flip');
+                var scale = container.clientWidth / pageFlip.offsetWidth;
+                container.style.transform = 'scale(' + scale + ')';
+                container.style.transformOrigin = 'top left';
+                container.style.height = (pageFlip.offsetHeight * scale) + 'px';
+            }
+
+
+            $(document).ready(function() {
+                window.addEventListener('resize', scalePageFlip);
+                scalePageFlip();
+            });
+                      
+          </script>
     </body>
 </html>

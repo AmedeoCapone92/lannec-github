@@ -64,12 +64,57 @@ function home(){
         <div class="grid-cell">
         </div>
         <div class="grid-cell"></div>
-        <a href="/gare"><div class="grid-cell border-right">GARE</div></a>
+        <a href="/gare">
+        <div class="grid-cell border-right" style="position: relative">
+            <div id="grid-cell-gare">
+                <div id="all">
+                    <div id="page-flip">
+                        <div id="r1">
+                        <div id="p1">
+                            <div>
+                            <div></div>
+                            </div>
+                        </div>
+                        </div>
+                        <div id="p2">
+                            <div>
+                                <div class="gare-centered">GARE</div>
+                            </div>
+                        </div>
+                        <div id="r3">
+                        <div id="p3">
+                            <div>
+                            <div></div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="s">
+                        <div id="s3">
+                            <div id="sp3"></div>
+                        </div>
+                        </div>
+                        <div class="s" id="s4">
+                        <div id="s2">
+                            <div id="sp2">E</div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
         <a href="/progetti-pubblici"><div class="grid-cell">PROGETTI PUBBLICI</div></a>
         <div class="grid-cell"></div>
         <div class="grid-cell border-right"></div>
         <div class="grid-cell border-down"></div>
-        <a href="/progetti-privati"><div class="grid-cell border-down">PROGETTI PRIVATI</div></a>
+        <a href="/progetti-privati" style="text-decoration: none;"        >
+            <div class="grid-cell border-down">
+                <div class="square-bands">
+                    <div class="bands"></div>
+                    <div class="label-bands">PROGETTI<br>PRIVATI</div>
+                </div>
+            </div>
+        </a>
         <div class="grid-cell border-right border-down"></div>
     </div>
 </div>`;
