@@ -15,3 +15,35 @@ function scaleCube() {
     container.style.transformOrigin = 'top left';
     container.style.height = (pageFlip.offsetHeight * scale) + 'px';
 }
+
+
+function activate_animations(){
+    window.addEventListener('resize', scalePageFlip);
+    scalePageFlip();
+
+    window.addEventListener('resize', scaleCube);
+    scaleCube();
+
+    var cubeDiv = document.getElementById('cube-container');
+    var cube = document.querySelector('.cube');
+    var currentClass = '';
+
+    function turnRight() {
+        if ( currentClass ) {
+            cube.classList.remove( currentClass );
+        }
+        cube.classList.add( 'show-right' );
+        currentClass = 'show-right';
+    }
+    function turnLeft() {
+        if ( currentClass ) {
+            cube.classList.remove( currentClass );
+        }
+        cube.classList.add( 'show-left' );
+        currentClass = 'show-left';
+    }
+
+    // Add the event listener for hover (mouseenter)
+    cubeDiv.addEventListener('mouseenter', turnRight);
+    cubeDiv.addEventListener('mouseleave', turnLeft);
+}

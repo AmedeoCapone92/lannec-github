@@ -11,6 +11,7 @@ $(document).ready(function() {
     // check page
     if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
         $('#body').html(home());
+        activate_animations();
     } else if (window.location.pathname == '/about') {
         $('#body').html(about());
     } else if (window.location.pathname == '/progetti-pubblici') {
@@ -27,35 +28,6 @@ $(document).ready(function() {
         // redirect to home
         window.location = '/';
     }
-
-    window.addEventListener('resize', scalePageFlip);
-    scalePageFlip();
-
-    window.addEventListener('resize', scaleCube);
-    scaleCube();
-
-    var cubeDiv = document.getElementById('cube-container');
-    var cube = document.querySelector('.cube');
-    var currentClass = '';
-
-    function turnRight() {
-        if ( currentClass ) {
-            cube.classList.remove( currentClass );
-        }
-        cube.classList.add( 'show-right' );
-        currentClass = 'show-right';
-    }
-    function turnLeft() {
-        if ( currentClass ) {
-            cube.classList.remove( currentClass );
-        }
-        cube.classList.add( 'show-left' );
-        currentClass = 'show-left';
-    }
-
-    // Add the event listener for hover (mouseenter)
-    cubeDiv.addEventListener('mouseenter', turnRight);
-    cubeDiv.addEventListener('mouseleave', turnLeft);
 });
 
 
@@ -114,38 +86,38 @@ function home(){
 
 <div class="row">
     <!-- Grid section goes first on small screens -->
-    <div class="col-sm-6 col-12 grid-section order-sm-last order-first">
-    <div class="grid-container">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <a href="/gare">
-        <div class="grid-cell border-right" style="position: relative">
-            <div id="grid-cell-gare">${grid_cell_gare()}</div>
-        </div>
-        </a>
-        <a href="/progetti-pubblici">
-        <div id="cube-container" class="grid-cell">
-            <div id="cube-scene" class="cube-scene">
-            <div id="cube" class="cube show-front">
-                <div class="cube__face cube__face--front"></div>
-                <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
+    <div class="col-sm-6 col-12 grid-section order-sm-last order-first" style="margin-bottom: 20px">
+        <div class="grid-container">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <a href="/gare">
+            <div class="grid-cell border-right" style="position: relative">
+                <div id="grid-cell-gare">${grid_cell_gare()}</div>
             </div>
+            </a>
+            <a href="/progetti-pubblici">
+            <div id="cube-container" class="grid-cell">
+                <div id="cube-scene" class="cube-scene">
+                <div id="cube" class="cube show-front">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
+                </div>
+                </div>
             </div>
-        </div>
-        </a>
-        <div class="grid-cell"></div>
-        <div class="grid-cell border-right"></div>
-        <div class="grid-cell border-down"></div>
-        <a href="/progetti-privati" style="text-decoration: none;">
-        <div class="grid-cell border-down">
-            <div class="square-bands">
-            <div class="bands"></div>
-            <div class="label-bands">PROGETTI<br>PRIVATI</div>
+            </a>
+            <div class="grid-cell"></div>
+            <div class="grid-cell border-right"></div>
+            <div class="grid-cell border-down"></div>
+            <a href="/progetti-privati" style="text-decoration: none;">
+            <div class="grid-cell border-down">
+                <div class="square-bands">
+                <div class="bands"></div>
+                <div class="label-bands">PROGETTI<br>PRIVATI</div>
+                </div>
             </div>
+            </a>
+            <div class="grid-cell border-right border-down"></div>
         </div>
-        </a>
-        <div class="grid-cell border-right border-down"></div>
-    </div>
     </div>
 
     <!-- Content section goes second on small screens -->
@@ -172,14 +144,14 @@ function home(){
         <h2>FIND US!</h2>
         <address>
         <p>
-            <img src="/images/map-pin.svg" />Castri di Lecce, via Papa Giovanni
+            <img src="/images/map-pin.svg" style="margin-right: 5px;" />Castri di Lecce, via Papa Giovanni
             XXIII, 64 73020
         </p>
-        <p>Lecce, Via Duca d'Aosta, 44 73100</p>
+        <p><img src="/images/map-pin.svg" style="margin-right: 5px;" />Lecce, Via Duca d'Aosta, 44 73100</p>
         <p>Phone: +39 328 5786003</p>
         <p>C.F./P.Iva 05130990756</p>
         <p>
-            Email: <a href="mailto:lannecstudio@pec.it">lannecstudio@pec.it</a>
+            Email: <a id="email-link" href="mailto:lannecstudio@pec.it">lannecstudio@pec.it</a>
         </p>
         </address>
     </section>

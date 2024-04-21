@@ -2,12 +2,14 @@
 function about(){
     $('#menu-item-home').removeClass('active');
     $('#menu-item-about').addClass('active');
+    $('#menu-item-news').removeClass('active');
     $('#menu-item-projects').removeClass('active');
     $('#menu-item-pubblici').removeClass('submenu-active');
     $('#menu-item-privati').removeClass('submenu-active');
     $('#menu-item-gare').removeClass('submenu-active');
 
     return `
+<div class="row">
     <div class="col-sm-2 col-md-3 col-0"></div>
     <div class="col-sm-8 col-md-6 col-12 content-section">
         ${header('LANNEC STUDIO')}
@@ -50,5 +52,5 @@ function about(){
             Lecce, Via Duca d'Aosta, 44 73100<br>        
         </div>
     </div>
-`;
+</div>`;
 }

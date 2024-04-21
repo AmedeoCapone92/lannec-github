@@ -1,11 +1,13 @@
 #body{
     margin-top: 40px !important;
     color: #1c586e;
-    text-align: justify;
-    word-wrap: break-word; /* or overflow-wrap: break-word; */
-    hyphens: auto;
-    /* Ensure the language is set for hyphenation to work correctly */
-    lang: it;
+
+    text-align: justify; /* Justifies text to fit the full width of the line */
+    overflow-wrap: break-word; /* Ensures words break correctly */
+    hyphens: auto; /* Hyphenates words to avoid large gaps */
+    word-spacing: 0.2em; /* Adjust the spacing as needed */
+    /* Optional adjustments for fine-tuning */
+    letter-spacing: normal; /* Use for extra control over spacing between letters */
 }
 h1{
     color: #123743;
@@ -25,6 +27,7 @@ h5{
 h6{
     color: #123743;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -200,7 +203,6 @@ h6{
 }
 
 .content-section {
-    padding-right: 40px !important;
     margin-top: 10px;
 }
 
@@ -403,4 +405,14 @@ h6{
     height: 100%;
     overflow: hidden;
     background: linear-gradient(to right, white 50%, #123743 50%);
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+#email-link {
+    text-decoration: none !important;
+    color: #123743 !important;
+    font-weight: bold;
 }
