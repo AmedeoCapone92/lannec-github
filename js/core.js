@@ -30,6 +30,43 @@ $(document).ready(function() {
 });
 
 
+function grid_cell_gare(){
+    return `<div id="all">
+    <div id="page-flip">
+        <div id="r1">
+        <div id="p1">
+            <div>
+            <div></div>
+            </div>
+        </div>
+        </div>
+        <div id="p2">
+            <div>
+                <div class="gare-centered">GARE</div>
+            </div>
+        </div>
+        <div id="r3">
+        <div id="p3">
+            <div>
+            <div></div>
+            </div>
+        </div>
+        </div>
+        <div class="s">
+        <div id="s3">
+            <div id="sp3"></div>
+        </div>
+        </div>
+        <div class="s" id="s4">
+        <div id="s2">
+            <div id="sp2">E</div>
+        </div>
+        </div>
+    </div>
+</div>`;
+}
+
+
 function home(){
     $('#menu-item-home').addClass('active');
     $('#menu-item-about').removeClass('active');
@@ -39,96 +76,87 @@ function home(){
     $('#menu-item-privati').removeClass('submenu-active');
     $('#menu-item-gare').removeClass('submenu-active');
 
-    return `<div class="col-sm-6 col-12 content-section">
-    ${header('LANNEC STUDIO')}
-      
-      <section id="mission">
-        <h2>OUR MISSION!</h2>
-        <p>La missione è fare architettura e non edilizia, in tempi rapidi e con l'uso di software all'avanguardia, trasporre nel contemporaneo i principi di bellezza, solidità e funzionalità, attraverso la ricerca tecnologica ed estetica continua, in dialogo con il corso dei tempi.</p>
-        <p>L'azienda lavora su tre rami, la progettazione per enti pubblici, la partecipazione a gare d'appalto per imprese e l'esecuzione di commesse medio-grandi per committenti privati. Lo studio affronta il processo architettonico ed ingegneristico a tutto tondo, dall'analisi dei fabbisogni con un approccio psicologico al collaudo finale delle opere realizzate.</p>
-      </section>
-      
-      <section id="find-us">
-        <h2>FIND US!</h2>
-        <address>
-          <p><img src="/images/map-pin.svg">Castri di Lecce, via Papa Giovanni XXIII, 64 73020</p>
-          <p>Lecce, Via Duca d'Aosta, 44 73100</p>
-          <p>Phone: +39 328 5786003</p>
-          <p>C.F./P.Iva 05130990756</p>
-          <p>Email: <a href="mailto:lannecstudio@pec.it">lannecstudio@pec.it</a></p>
-        </address>
-      </section>
+    return `
+<div class="row">
+    <div class="col-12">
+      ${header('LANNEC STUDIO')}
+    </div>
 </div>
-<div class="col-sm-6 col-12 grid-section">
+
+<div class="row">
+    <!-- Grid section goes first on small screens -->
+    <div class="col-sm-6 col-12 grid-section order-sm-last order-first">
     <div class="grid-container">
-        <div class="grid-cell">
-        </div>
+        <div class="grid-cell"></div>
         <div class="grid-cell"></div>
         <a href="/gare">
         <div class="grid-cell border-right" style="position: relative">
-            <div id="grid-cell-gare">
-                <div id="all">
-                    <div id="page-flip">
-                        <div id="r1">
-                        <div id="p1">
-                            <div>
-                            <div></div>
-                            </div>
-                        </div>
-                        </div>
-                        <div id="p2">
-                            <div>
-                                <div class="gare-centered">GARE</div>
-                            </div>
-                        </div>
-                        <div id="r3">
-                        <div id="p3">
-                            <div>
-                            <div></div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="s">
-                        <div id="s3">
-                            <div id="sp3"></div>
-                        </div>
-                        </div>
-                        <div class="s" id="s4">
-                        <div id="s2">
-                            <div id="sp2">E</div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="grid-cell-gare">${grid_cell_gare()}</div>
         </div>
         </a>
         <a href="/progetti-pubblici">
-            <div id="cube-container" class="grid-cell">
-                <div id="cube-scene" class="cube-scene">
-                    <div id="cube" class="cube show-front">
-                        <div class="cube__face cube__face--front"></div>
-                        <div class="cube__face cube__face--right">
-                            PROGETTI PUBBLICI
-                        </div>
-                    </div>
-                </div>
+        <div id="cube-container" class="grid-cell">
+            <div id="cube-scene" class="cube-scene">
+            <div id="cube" class="cube show-front">
+                <div class="cube__face cube__face--front"></div>
+                <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
             </div>
+            </div>
+        </div>
         </a>
         <div class="grid-cell"></div>
         <div class="grid-cell border-right"></div>
         <div class="grid-cell border-down"></div>
-        <a href="/progetti-privati" style="text-decoration: none;"        >
-            <div class="grid-cell border-down">
-                <div class="square-bands">
-                    <div class="bands"></div>
-                    <div class="label-bands">PROGETTI<br>PRIVATI</div>
-                </div>
+        <a href="/progetti-privati" style="text-decoration: none;">
+        <div class="grid-cell border-down">
+            <div class="square-bands">
+            <div class="bands"></div>
+            <div class="label-bands">PROGETTI<br>PRIVATI</div>
             </div>
+        </div>
         </a>
         <div class="grid-cell border-right border-down"></div>
     </div>
-</div>`;
+    </div>
+
+    <!-- Content section goes second on small screens -->
+    <div class="col-sm-6 col-12 content-section order-sm-first order-last">
+    <section id="mission">
+        <h2>OUR MISSION!</h2>
+        <p>
+        La missione è fare architettura e non edilizia, in tempi rapidi e con
+        l'uso di software all'avanguardia, trasporre nel contemporaneo i
+        principi di bellezza, solidità e funzionalità, attraverso la ricerca
+        tecnologica ed estetica continua, in dialogo con il corso dei tempi.
+        </p>
+        <p>
+        L'azienda lavora su tre rami, la progettazione per enti pubblici, la
+        partecipazione a gare d'appalto per imprese e l'esecuzione di commesse
+        medio-grandi per committenti privati. Lo studio affronta il processo
+        architettonico ed ingegneristico a tutto tondo, dall'analisi dei
+        fabbisogni con un approccio psicologico al collaudo finale delle opere
+        realizzate.
+        </p>
+    </section>
+
+    <section id="find-us">
+        <h2>FIND US!</h2>
+        <address>
+        <p>
+            <img src="/images/map-pin.svg" />Castri di Lecce, via Papa Giovanni
+            XXIII, 64 73020
+        </p>
+        <p>Lecce, Via Duca d'Aosta, 44 73100</p>
+        <p>Phone: +39 328 5786003</p>
+        <p>C.F./P.Iva 05130990756</p>
+        <p>
+            Email: <a href="mailto:lannecstudio@pec.it">lannecstudio@pec.it</a>
+        </p>
+        </address>
+    </section>
+    </div>
+</div>  
+`;
 }
 
 
