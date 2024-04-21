@@ -88,35 +88,37 @@ function home(){
     <!-- Grid section goes first on small screens -->
     <div class="col-sm-6 col-12 grid-section order-sm-last order-first" style="margin-bottom: 20px">
         <div class="grid-container">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
+            <div id="grid-cell-1" class="grid-cell"></div>
+            <div id="grid-cell-2" class="grid-cell"></div>
             <a href="/gare">
-            <div class="grid-cell border-right" style="position: relative">
-                <div id="grid-cell-gare">${grid_cell_gare()}</div>
-            </div>
+                <div id="grid-cell-3" class="grid-cell border-right" style="position: relative">
+                    <div id="grid-cell-gare">${grid_cell_gare()}</div>
+                </div>
             </a>
             <a href="/progetti-pubblici">
-            <div id="cube-container" class="grid-cell">
-                <div id="cube-scene" class="cube-scene">
-                <div id="cube" class="cube show-front">
-                    <div class="cube__face cube__face--front"></div>
-                    <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
+                <div id="grid-cell-4" class="grid-cell">
+                    <div id="cube-container">
+                        <div id="cube-scene" class="cube-scene">
+                            <div id="cube" class="cube show-front">
+                                <div class="cube__face cube__face--front"></div>
+                                <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
             </a>
-            <div class="grid-cell"></div>
-            <div class="grid-cell border-right"></div>
-            <div class="grid-cell border-down"></div>
+            <div id="grid-cell-5" class="grid-cell"></div>
+            <div id="grid-cell-6" class="grid-cell border-right"></div>
+            <div id="grid-cell-7" class="grid-cell border-down"></div>
             <a href="/progetti-privati" style="text-decoration: none;">
-            <div class="grid-cell border-down">
-                <div class="square-bands">
-                <div class="bands"></div>
-                <div class="label-bands">PROGETTI<br>PRIVATI</div>
+                <div id="grid-cell-8" class="grid-cell border-down">
+                    <div class="square-bands">
+                        <div class="bands"></div>
+                        <div class="label-bands">PROGETTI<br>PRIVATI</div>
+                    </div>
                 </div>
-            </div>
             </a>
-            <div class="grid-cell border-right border-down"></div>
+            <div id="grid-cell-9" class="grid-cell border-right border-down"></div>
         </div>
     </div>
 
@@ -186,9 +188,4 @@ function news_page(){
     };
     html += `</div></div></div>`;
     $('#body').html(html);
-}
-
-
-function show_home_grid_projects_images(project_type){
-    console.log('ready');
 }

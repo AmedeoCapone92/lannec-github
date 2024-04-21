@@ -16,6 +16,73 @@ function scaleCube() {
     container.style.height = (pageFlip.offsetHeight * scale) + 'px';
 }
 
+PROJECT_GRID_CELLS = {
+    'gare': 3,
+    'progetti-pubblici': 4,
+    'progetti-privati': 8,
+}
+
+
+function show_home_grid_projects_images(project_type){
+
+    var progetti = PROJECTS[project_type];
+
+    // randomly select 4 projects no repeat
+    var selected_projects = [];
+    while (selected_projects.length < 4 && selected_projects.length < progetti.length){
+        var project = progetti[Math.floor(Math.random() * progetti.length)];
+        if (!selected_projects.includes(project)){
+            selected_projects.push(project);
+        }
+    }
+
+    // now select N random grid cells [1 to 9] excluding the project_type cell
+    var selected_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    selected_cells = selected_cells.filter(cell => cell != PROJECT_GRID_CELLS[project_type]);
+    for (var cell of selected_cells){
+        $('#' + 'grid-cell-' + cell).empty();
+    }
+    selected_cells.sort(() => Math.random() - 0.5);
+    selected_cells = selected_cells.slice(0, 4);
+
+    for (let cell of selected_cells){
+        // set the background image of the cell
+        var project_filename = selected_projects.pop();
+        console.log('project_filename', project_filename);
+        if (project_filename){
+            fetchProject(project_type, project_filename)
+            .then(project => {
+                // console.log(project);
+                var preview = '/' + project.preview;
+                // Create an <img> element with a fade-in effect
+                var img = $('<img>')
+                .attr('src', preview) // Set the source of the image
+                .css({
+                    'width': '100%', // Scale to the size of the div
+                    'height': '100%',
+                    'object-fit': 'cover', // Ensure the image fills the div
+                    'animation': 'fadeIn 3.5s', // Apply the 5s fade-in animation
+                });
+                $('#' + 'grid-cell-' + cell).append(img);
+                console.log('cell', cell);
+            })
+        }
+    }
+}
+
+function reset_grid(project_type){
+    for (var call of [1,2,5,6,7,9]){
+        $('#' + 'grid-cell-' + call).empty();
+    }
+}
+
+function reset_grid_progetti_pubblici_images(){
+    reset_grid('progetti-pubblici');
+}
+
+function show_home_grid_progetti_pubblici_images(){
+    show_home_grid_projects_images('progetti-pubblici');
+}
 
 function activate_animations(){
     window.addEventListener('resize', scalePageFlip);
@@ -45,5 +112,7 @@ function activate_animations(){
 
     // Add the event listener for hover (mouseenter)
     cubeDiv.addEventListener('mouseenter', turnRight);
+    cubeDiv.addEventListener('mouseenter', show_home_grid_progetti_pubblici_images);
     cubeDiv.addEventListener('mouseleave', turnLeft);
+    cubeDiv.addEventListener('mouseleave', reset_grid_progetti_pubblici_images);
 }
