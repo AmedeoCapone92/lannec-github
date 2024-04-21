@@ -56,10 +56,7 @@
                 </div>
             </nav>
             
-            
             <div id="body" class="row"></div>
-
-            <!-- https://cssdeck.com/labs/pure-css3-page-flip-effect -->
 
         </div>
         <script src="/js/lib/jquery-3.7.0.js"></script>
@@ -68,65 +65,8 @@
         <script src="/js/utils.js"></script>
         <script src="/js/projects.js"></script>
         <script src="/js/about.js"></script>
+        <script src="/js/animations.js"></script>
         <script src="/progetti/progetti.js"></script>
         <script src="/progetti/news.js"></script>
-        <script>
-            function scalePageFlip() {
-                var container = document.getElementById('all');
-                var pageFlip = document.getElementById('page-flip');
-                var scale = container.clientWidth / pageFlip.offsetWidth;
-                container.style.transform = 'scale(' + scale + ')';
-                container.style.transformOrigin = 'top left';
-                container.style.height = (pageFlip.offsetHeight * scale) + 'px';
-            }
-
-            function scaleCube() {
-                var container = document.getElementById('cube-scene');
-                var pageFlip = document.getElementById('cube');
-                var scale = container.clientWidth / pageFlip.offsetWidth;
-                container.style.transform = 'scale(' + scale + ')';
-                container.style.transformOrigin = 'top left';
-                container.style.height = (pageFlip.offsetHeight * scale) + 'px';
-            }
-
-
-            $(document).ready(function() {
-                window.addEventListener('resize', scalePageFlip);
-                scalePageFlip();
-
-                window.addEventListener('resize', scaleCube);
-                scaleCube();
-
-
-                var cubeDiv = document.getElementById('cube-container');
-
-                
-                function turnRight() {
-                    if ( currentClass ) {
-                        cube.classList.remove( currentClass );
-                    }
-                    cube.classList.add( 'show-right' );
-                    currentClass = 'show-right';
-                }
-                function turnLeft() {
-                    if ( currentClass ) {
-                        cube.classList.remove( currentClass );
-                    }
-                    cube.classList.add( 'show-left' );
-                    currentClass = 'show-left';
-                }
-
-                // Add the event listener for hover (mouseenter)
-                cubeDiv.addEventListener('mouseenter', turnRight);
-                cubeDiv.addEventListener('mouseleave', turnLeft);
-
-                var cube = document.querySelector('.cube');
-                var radioGroup = document.querySelector('.radio-group');
-                var currentClass = '';
-
-                
-            });
-               
-          </script>
     </body>
 </html>

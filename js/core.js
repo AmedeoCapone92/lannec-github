@@ -27,6 +27,35 @@ $(document).ready(function() {
         // redirect to home
         window.location = '/';
     }
+
+    window.addEventListener('resize', scalePageFlip);
+    scalePageFlip();
+
+    window.addEventListener('resize', scaleCube);
+    scaleCube();
+
+    var cubeDiv = document.getElementById('cube-container');
+    var cube = document.querySelector('.cube');
+    var currentClass = '';
+
+    function turnRight() {
+        if ( currentClass ) {
+            cube.classList.remove( currentClass );
+        }
+        cube.classList.add( 'show-right' );
+        currentClass = 'show-right';
+    }
+    function turnLeft() {
+        if ( currentClass ) {
+            cube.classList.remove( currentClass );
+        }
+        cube.classList.add( 'show-left' );
+        currentClass = 'show-left';
+    }
+
+    // Add the event listener for hover (mouseenter)
+    cubeDiv.addEventListener('mouseenter', turnRight);
+    cubeDiv.addEventListener('mouseleave', turnLeft);
 });
 
 
@@ -185,4 +214,9 @@ function news_page(){
     };
     html += `</div></div></div>`;
     $('#body').html(html);
+}
+
+
+function show_home_grid_projects_images(project_type){
+    console.log('ready');
 }
