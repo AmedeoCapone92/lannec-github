@@ -27,7 +27,11 @@ PROJECT_TYPE_TO_RENDER_FN = {
     'progetti-pubblici': grid_cell_progetti_pubblici,
     'gare': grid_cell_gare,
 }
-
+PROJECT_TYPE_TO_ANIMATION_FN = {
+    'progetti-privati': activate_bands,
+    'progetti-pubblici': activate_cube,
+    'gare': activate_sheet,
+}
 
 function show_home_grid_projects_images(project_type){
 
@@ -78,17 +82,14 @@ function reset_grid(project_type){
         $('#' + 'grid-cell-' + call).empty();
     }
     for (let [key, value] of Object.entries(PROJECT_GRID_CELLS)) {
-        if (key !== project_type)
+        if (key !== project_type){
             $('#grid-cell-' + value).html(PROJECT_TYPE_TO_RENDER_FN[key]);
+            PROJECT_TYPE_TO_ANIMATION_FN[key]();
+        }
     }
-    activate_animations();
 }
 
-
-function activate_animations(){
-    window.addEventListener('resize', scalePageFlip);
-    scalePageFlip();
-
+function activate_cube(){
     window.addEventListener('resize', scaleCube);
     scaleCube();
 
@@ -117,14 +118,27 @@ function activate_animations(){
     cubeDiv.addEventListener('mouseleave', turnLeft);
     cubeDiv.addEventListener('mouseleave', () => { reset_grid("progetti-pubblici") });
 
+}
+
+function activate_sheet(){
+    window.addEventListener('resize', scalePageFlip);
+    scalePageFlip();
 
     var pageFlipDiv = document.getElementById('grid-cell-gare');
     pageFlipDiv.addEventListener('mouseenter', () =>  { show_home_grid_projects_images('gare')});
     pageFlipDiv.addEventListener('mouseleave', () => { reset_grid("gare") });
 
+}
 
+function activate_bands(){
     var bandsDiv = document.getElementById('progetti-privati-cell');
     bandsDiv.addEventListener('mouseenter', () =>  { show_home_grid_projects_images('progetti-privati')});
     bandsDiv.addEventListener('mouseleave', () => { reset_grid("progetti-privati") });
+}
 
+
+function activate_animations(){
+    activate_cube();
+    activate_sheet();
+    activate_bands();
 }
