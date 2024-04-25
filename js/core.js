@@ -32,41 +32,64 @@ $(document).ready(function() {
 
 
 function grid_cell_gare(){
-    return `<div id="all">
-    <div id="page-flip">
-        <div id="r1">
-        <div id="p1">
-            <div>
-            <div></div>
+    return `
+<div id="grid-cell-gare">
+    <div id="all">
+        <div id="page-flip">
+            <div id="r1">
+            <div id="p1">
+                <div>
+                <div></div>
+                </div>
             </div>
-        </div>
-        </div>
-        <div id="p2">
-            <div>
-                <div class="gare-centered">GARE</div>
             </div>
-        </div>
-        <div id="r3">
-        <div id="p3">
-            <div>
-            <div></div>
+            <div id="p2">
+                <div>
+                    <div class="gare-centered">GARE</div>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="s">
-        <div id="s3">
-            <div id="sp3"></div>
-        </div>
-        </div>
-        <div class="s" id="s4">
-        <div id="s2">
-            <div id="sp2">E</div>
-        </div>
+            <div id="r3">
+            <div id="p3">
+                <div>
+                <div></div>
+                </div>
+            </div>
+            </div>
+            <div class="s">
+            <div id="s3">
+                <div id="sp3"></div>
+            </div>
+            </div>
+            <div class="s" id="s4">
+            <div id="s2">
+                <div id="sp2">E</div>
+            </div>
+            </div>
         </div>
     </div>
 </div>`;
 }
 
+function grid_cell_progetti_pubblici(){
+    return `
+<div id="cube-container">
+    <div id="cube-scene" class="cube-scene">
+        <div id="cube" class="cube show-front">
+            <div class="cube__face cube__face--front"></div>
+            <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
+        </div>
+    </div>
+</div>`;
+}
+
+function grid_cell_progetti_privati(){
+    return `
+<div id="progetti-privati-cell" class="square-bands">
+    <div class="bands"></div>
+    <div class="label-bands">PROGETTI<br>PRIVATI</div>
+</div>
+`;
+}
 
 function home(){
     $('#menu-item-home').addClass('active');
@@ -92,19 +115,12 @@ function home(){
             <div id="grid-cell-2" class="grid-cell"></div>
             <a href="/gare">
                 <div id="grid-cell-3" class="grid-cell border-right" style="position: relative">
-                    <div id="grid-cell-gare">${grid_cell_gare()}</div>
+                    ${grid_cell_gare()}
                 </div>
             </a>
             <a href="/progetti-pubblici">
                 <div id="grid-cell-4" class="grid-cell">
-                    <div id="cube-container">
-                        <div id="cube-scene" class="cube-scene">
-                            <div id="cube" class="cube show-front">
-                                <div class="cube__face cube__face--front"></div>
-                                <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
-                            </div>
-                        </div>
-                    </div>
+                    ${grid_cell_progetti_pubblici()}
                 </div>
             </a>
             <div id="grid-cell-5" class="grid-cell"></div>
@@ -112,10 +128,7 @@ function home(){
             <div id="grid-cell-7" class="grid-cell border-down"></div>
             <a href="/progetti-privati" style="text-decoration: none;">
                 <div id="grid-cell-8" class="grid-cell border-down">
-                    <div class="square-bands">
-                        <div class="bands"></div>
-                        <div class="label-bands">PROGETTI<br>PRIVATI</div>
-                    </div>
+                    ${grid_cell_progetti_privati()}
                 </div>
             </a>
             <div id="grid-cell-9" class="grid-cell border-right border-down"></div>
