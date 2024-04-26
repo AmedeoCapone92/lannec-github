@@ -98,6 +98,7 @@ function activate_cube(){
     var currentClass = '';
 
     function turnRight() {
+        $('#cube-face-right').text('PROGETTI PUBBLICI');
         if ( currentClass ) {
             cube.classList.remove( currentClass );
         }
@@ -110,6 +111,8 @@ function activate_cube(){
         }
         cube.classList.add( 'show-left' );
         currentClass = 'show-left';
+        setTimeout(() => { $('#cube-face-right').text(''); }, 800);
+        
     }
 
     // Add the event listener for hover (mouseenter)

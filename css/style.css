@@ -38,7 +38,7 @@ h6{
 }
   
 .grid-cell {
-    background-color: #f2f2f2;
+    background-color: white; /* #f2f2f2; */
     text-align: center;
     aspect-ratio: 1/1;
     border-top: 1px solid #123743;
@@ -316,22 +316,22 @@ h6{
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
-        #123743 0px,
-        #123743 25px,
-      white 25px,
-      white 50px,
-      #123743 50px,
-      #123743 75px,
-      white 75px,
-      white 100px,
-      #123743 100px,
-      #123743 125px,
-      white 125px,
-      white 150px,
-      #123743 150px,
-      #123743 175px,
-      white 175px,
-      white 200px
+    #123743 0px,
+    #123743 25px,
+    rgb(212, 212, 212) 25px,
+    rgb(225, 225, 225) 50px,
+    #123743 50px,
+    #123743 75px,
+    rgb(225, 225, 225) 75px,
+    white 100px,
+    #123743 100px,
+    #123743 125px,
+    white 125px,
+    white 150px,
+    #123743 150px,
+    #123743 175px,
+    white 175px,
+    white 200px
     );
     position: absolute;
     top: 0;

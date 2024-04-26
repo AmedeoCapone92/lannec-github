@@ -76,7 +76,7 @@ function grid_cell_progetti_pubblici(){
     <div id="cube-scene" class="cube-scene">
         <div id="cube" class="cube show-front">
             <div class="cube__face cube__face--front"></div>
-            <div class="cube__face cube__face--right">PROGETTI PUBBLICI</div>
+            <div id="cube-face-right" class="cube__face cube__face--right"></div>
         </div>
     </div>
 </div>`;
