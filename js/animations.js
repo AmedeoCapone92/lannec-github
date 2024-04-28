@@ -84,12 +84,12 @@ function reset_grid(project_type){
     for (let [key, value] of Object.entries(PROJECT_GRID_CELLS)) {
         if (key !== project_type){
             $('#grid-cell-' + value).html(PROJECT_TYPE_TO_RENDER_FN[key]);
-            PROJECT_TYPE_TO_ANIMATION_FN[key]();
+            PROJECT_TYPE_TO_ANIMATION_FN[key](false);
         }
     }
 }
 
-function activate_cube(){
+function activate_cube(run){
     window.addEventListener('resize', scaleCube);
     scaleCube();
 
@@ -121,9 +121,11 @@ function activate_cube(){
     cubeDiv.addEventListener('mouseleave', turnLeft);
     cubeDiv.addEventListener('mouseleave', () => { reset_grid("progetti-pubblici") });
 
+    if (run)
+        turnRight();
 }
 
-function activate_sheet(){
+function activate_sheet(run){
     window.addEventListener('resize', scalePageFlip);
     scalePageFlip();
 
@@ -131,17 +133,46 @@ function activate_sheet(){
     pageFlipDiv.addEventListener('mouseenter', () =>  { show_home_grid_projects_images('gare')});
     pageFlipDiv.addEventListener('mouseleave', () => { reset_grid("gare") });
 
+    if (run){
+        const pageFlip = document.getElementById("page-flip");
+        
+        // Manually apply the hover-related styles
+        pageFlip.querySelector("#r1").style.transform = "translate(-1285px, -500px) rotate(0deg)";
+        pageFlip.querySelector("#p1 > div").style.transform = "translate(1285px, 500px) rotate(0deg)";
+        pageFlip.querySelector("#r3").style.transform = "translate(-1285px, -500px) rotate(0deg)";
+        pageFlip.querySelector("#p3 > div").style.transform = "translate(1000px, 500px) rotate(0deg)";
+        
+        // You can also change other properties like transition duration, opacity, etc.
+        pageFlip.querySelector("#s4").style.opacity = "0";
+          
+    }
+
 }
 
-function activate_bands(){
+function activate_bands(run){
     var bandsDiv = document.getElementById('progetti-privati-cell');
     bandsDiv.addEventListener('mouseenter', () =>  { show_home_grid_projects_images('progetti-privati')});
     bandsDiv.addEventListener('mouseleave', () => { reset_grid("progetti-privati") });
+
+    if (run){
+        // Get the 'bands' element inside 'square-bands'
+        const bandsElement = document.querySelector('.square-bands .bands');
+
+        // Apply the transform style
+        bandsElement.style.transform = 'translateY(-100%)';
+
+    }
 }
 
 
 function activate_animations(){
-    activate_cube();
-    activate_sheet();
-    activate_bands();
+    if (hasTouchscreen()){
+        setTimeout(() => { activate_cube(true); }, 500);
+        setTimeout(() => { activate_bands(true); }, 1000);
+        setTimeout(() => { activate_sheet(true); }, 1500);
+    } else {
+        activate_cube(false);
+        activate_bands(false);
+        activate_sheet(false);
+    }
 }

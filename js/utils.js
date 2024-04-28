@@ -22,3 +22,14 @@ function header(title){
     </div>
 </header>`;
 }
+
+// Function to check if the device has a touchscreen
+function hasTouchscreen() {
+    let hasTouch = false;
+  
+    if ("ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0) {
+      hasTouch = true;
+    }
+  
+    return hasTouch;
+  }
