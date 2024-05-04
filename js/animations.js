@@ -9,11 +9,31 @@ function scalePageFlip() {
 
 function scaleCube() {
     var container = document.getElementById('cube-scene');
-    var pageFlip = document.getElementById('cube');
-    var scale = container.clientWidth / pageFlip.offsetWidth;
+    var cube = document.getElementById('cube');
+    var scale = container.clientWidth / cube.offsetWidth;
     container.style.transform = 'scale(' + scale + ')';
     container.style.transformOrigin = 'top left';
-    container.style.height = (pageFlip.offsetHeight * scale) + 'px';
+    container.style.height = (cube.offsetHeight * scale) + 'px';
+}
+
+function adjustBandsFontSize() {
+    // Get the parent div
+    var parentDiv = document.getElementById('progetti-privati-cell');
+    
+    // Get the width of the parent div
+    var parentWidth = parentDiv.offsetWidth;
+    
+    // Set a base font size and define the scaling factor
+    var baseSize = 16; // Base size in pixels
+    var scaleFactor = 0.05; // Adjust this factor based on testing
+    
+    // Calculate new font size
+    var newSize = baseSize + (parentWidth * scaleFactor);
+
+    // Set the new font size to the element
+    document.querySelectorAll('#progetti-privati-cell .label-bands').forEach(function(element) {
+        element.style.fontSize = `${newSize}px`;
+    });
 }
 
 PROJECT_GRID_CELLS = {
@@ -162,6 +182,8 @@ function activate_bands(run){
         bandsElement.style.transform = 'translateY(-100%)';
 
     }
+
+    adjustBandsFontSize();
 }
 
 

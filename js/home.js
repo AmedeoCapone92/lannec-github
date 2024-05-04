@@ -84,10 +84,10 @@ function grid_cell_progetti_pubblici(){
 
 function grid_cell_progetti_privati(){
     return `
-<div id="progetti-privati-cell" class="square-bands">
-    <div class="bands"></div>
-    <div class="label-bands">PROGETTI<br>PRIVATI</div>
-</div>
+    <div id="progetti-privati-cell" class="square-bands">
+        <div class="bands"></div>
+        <div id="label-bands" class="label-bands">PROGETTI<br>PRIVATI</div>
+    </div>
 `;
 }
 
