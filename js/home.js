@@ -103,7 +103,7 @@ function home(){
     return `
 <div class="row">
     <div class="col-12">
-      ${header('LANNEC STUDIO [test]')}
+      ${header('LANNEC STUDIO')}
     </div>
 </div>
 
