@@ -17,21 +17,19 @@ function scaleCube() {
 }
 
 function adjustBandsFontSize() {
-    // Get the parent div
-    var parentDiv = document.getElementById('progetti-privati-cell');
-    
-    // Get the width of the parent div
-    var parentWidth = parentDiv.offsetWidth;
+    console.log('hello')
+    // Get the viewport width
+    var viewportWidth = window.innerWidth;
     
     // Set a base font size and define the scaling factor
-    var baseSize = 16; // Base size in pixels
-    var scaleFactor = 0.05; // Adjust this factor based on testing
+    var baseSize = 12; // Base size in pixels for large screens
+    var scaleFactor = 0.007; // Adjust this factor based on testing
     
     // Calculate new font size
-    var newSize = baseSize + (parentWidth * scaleFactor);
+    var newSize = baseSize + (viewportWidth * scaleFactor);
 
     // Set the new font size to the element
-    document.querySelectorAll('#progetti-privati-cell .label-bands').forEach(function(element) {
+    document.querySelectorAll('.label-bands').forEach(function(element) {
         element.style.fontSize = `${newSize}px`;
     });
 }
@@ -180,21 +178,19 @@ function activate_bands(run){
 
         // Apply the transform style
         bandsElement.style.transform = 'translateY(-100%)';
-
     }
-
     adjustBandsFontSize();
 }
 
 
 function activate_animations(){
-    if (hasTouchscreen()){
+    // if (hasTouchscreen()){
         setTimeout(() => { activate_cube(true); }, 500);
         setTimeout(() => { activate_bands(true); }, 1000);
         setTimeout(() => { activate_sheet(true); }, 1500);
-    } else {
-        activate_cube(false);
-        activate_bands(false);
-        activate_sheet(false);
-    }
+    // } else {
+    //     activate_cube(false);
+    //     activate_bands(false);
+    //     activate_sheet(false);
+    // }
 }
