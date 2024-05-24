@@ -1,7 +1,7 @@
 {
     "title": "Parco XX Settembre",
     "subtitle": "DEMOLIZIONE DEL PLESSO SCOLASTICO SITO IN VIA XX SETTEMBRE E COSTRUZIONE DI UN NUOVO FABBRICATO DESTINATO A SCUOLA SECONDARIA DI I GRADO IN PIAZZA GIULIO PASTORE",
-    "preview": "images/gare/Gara Nardò aerea prima.jpg",
+    "preview": "images/gare/GaraNardo aerea dopo rid.jpg",
     "metadata": {
         "LOCATION": "Nardò",
         "YEAR": "2023",
@@ -14,7 +14,7 @@
         },
         {
             "type": "image",
-            "content": "images/gare/gara-esempio-2.png"
+            "content": "images/gare/nardo"
         },
         {
             "type": "text",
