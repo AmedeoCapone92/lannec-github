@@ -10,6 +10,6 @@ PROJECTS = {
     'gare': [
         'gara-esempio.json',
         'portarei.json',
-        'esempio2.json'
+        'gara-nardo.json'
     ],
 }
