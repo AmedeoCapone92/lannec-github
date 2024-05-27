@@ -187,11 +187,9 @@ h6{
     background-position: center;
     background-repeat: no-repeat;
 }
-.project-preview:hover {
-    /* blue opacity over background */
+/* .project-preview:hover {
     background-color: rgba(0, 0, 255, 0.5) !important; 
-}
-
+} */
 #progetti-pubblici-preview {
     background-image: url('/images/progetti-pubblici/pubblici-esempio-preview.png');
 }
@@ -213,6 +211,16 @@ h6{
     cursor: pointer;
     border: 1px solid #123743;
     aspect-ratio: 1/1;
+    margin: 10px;
+}
+
+.grid-section {
+    padding: 10px;
+}
+
+.preview-container {
+    position: relative;
+    background-size: cover; /* Ensure background image covers the container */
 }
 
 .preview-container::after {
@@ -222,14 +230,26 @@ h6{
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(18,55, 67, 0.5); /* Semi-transparent blue */
+    background: rgba(18, 55, 67, 0.5);
     opacity: 0;
     transition: opacity 0.3s;
+    z-index: 1; /* Set a z-index for the overlay */
 }
 
 .preview-container:hover::after {
     opacity: 1;
 }
+
+.project-title-container {
+    position: relative;
+    z-index: 2; /* Higher z-index to ensure it is above the overlay */
+}
+
+.project-title, .project-subtitle {
+    margin: 0;
+}
+
+
 .project-title-container {
     position: absolute;
     top: 50%;
@@ -239,7 +259,7 @@ h6{
 }
 
 .project-title {
-    color: black;
+    color: white;
     font-size: 2em; /* Base font size for the container */
     opacity: 0;
     transition: opacity 0.3s;
@@ -247,7 +267,7 @@ h6{
 }
 
 .project-subtitle {
-    color: black;
+    color: white;
     font-size: 1.4em; /* Base font size for the container */
     opacity: 0;
     transition: opacity 0.3s;
