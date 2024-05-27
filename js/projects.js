@@ -1,4 +1,6 @@
-
+marked.setOptions({
+    breaks: true // Convert single line breaks to <br>
+});
 
 function preview_progetto(title, subtitle, link, preview){
     return `
@@ -86,7 +88,7 @@ function project_page(path){
             var content = '';
             project.content.forEach(c => {
                 if (c.type == 'text') {
-                    content += `<p>${c.content}</p>`;
+                    content += `<p>${marked.marked(c.content)}</p>`;
                 }
                 else if (c.type == 'image') {
                     content += `<img src="/${c.content}" style="width: 100%">`;
@@ -95,7 +97,7 @@ function project_page(path){
             var metadata = '';
             if (project.metadata) {
                 for (var key in project.metadata) {
-                    metadata += `<h5 style="margin-bottom: 0px;">${key}</h5>${project.metadata[key]}<br><br><br>`;
+                    metadata += `<h5 style="margin-bottom: 0px;">${key}</h5>${marked.marked(project.metadata[key])}<br>`;
                 }
             }
             var html = `

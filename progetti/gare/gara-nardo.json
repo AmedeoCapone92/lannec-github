@@ -1,16 +1,16 @@
 {
     "title": "Parco XX Settembre",
     "subtitle": "Demolizione del plesso scolastico sito in via XX settembre e costruzione di un nuovo fabbricato destinato a scuola secondaria di I grado in piazza Giulio Pastore – offerta economicamente più vantaggiosa",
-    "preview": "images/gare/GaraNardo aerea dopo rid.jpg",
+    "preview": "images/gare/gara-nardo/GaraNardo aerea dopo rid.jpg",
     "metadata": {
-        "LOCATION": "Nardò",
-        "YEAR": "2023",
-        "DESIGNED BY": "ARCH.\nAMEDEO CAPONE\nING.\nCRISTIAN DI DONFRANCESCO\nLANDSCAPE DESIGNED\nARCH. ANDREA MARCHETTINI"
+        "LOCALITÀ": "Nardò",
+        "ANNO": "2023",
+        "PROGETTO": "ARCH.\nAMEDEO CAPONE\nING.\nCRISTIAN DI DONFRANCESCO\nLANDSCAPE DESIGNED\nARCH. ANDREA MARCHETTINI"
     },
     "content": [
          {
             "type": "image",
-            "content": "images/gare/render-2.jpeg"
+            "content": "images/gare/gara-nardo/render-2.jpeg"
         },
         {
             "type": "text",
@@ -30,7 +30,7 @@
         },
         {
             "type": "image",
-            "content": "images/gare/Vista aula.jpg"
+            "content": "images/gare/gara-nardo/Vista aula.jpg"
         },
         {
             "type": "text",

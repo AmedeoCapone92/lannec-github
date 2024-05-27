@@ -296,6 +296,7 @@ h6{
     flex-shrink: 3;
     height: calc(100vh - 120px); /* 100% of the viewport height minus 50 pixels */
     overflow-y: auto; /* Enables vertical scroll */
+    padding: 15px;
 }
 
 /* Media query for small screens */
