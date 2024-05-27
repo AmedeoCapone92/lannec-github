@@ -244,7 +244,7 @@ h6{
     opacity: 1;
 }
 
-.project-title, .project-subtitle {
+.project-title, .project-metadata {
     margin: 0;
 }
 
@@ -267,7 +267,7 @@ h6{
     text-transform: uppercase;
 }
 
-.project-subtitle {
+.project-metadata {
     color: white;
     font-size: 1.4em; /* Base font size for the container */
     opacity: 0;
@@ -279,7 +279,7 @@ h6{
 .preview-container:hover .project-title {
     opacity: 1;
 }
-.preview-container:hover .project-subtitle {
+.preview-container:hover .project-metadata {
     opacity: 1;
 }
 

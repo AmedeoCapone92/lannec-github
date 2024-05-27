@@ -2,14 +2,15 @@ marked.setOptions({
     breaks: true // Convert single line breaks to <br>
 });
 
-function preview_progetto(title, subtitle, link, preview){
+function preview_progetto(title, metadata, link, preview){
     return `
     <div class="col-sm-6 col-12 grid-section">
         <a href="${link}">
         <div class="preview-container" style="background-image: url('/${preview}')">
             <div class="project-title-container">
                 <div class="project-title">${title}</div>
-                <div class="project-subtitle">${subtitle}</div>
+                <div class="project-metadata">${metadata['LOCALITÀ']}</div>
+                <div class="project-metadata">${metadata['ANNO']}</div>
             </div>
         </div>
         </a>
@@ -55,15 +56,15 @@ function projects_page(category, title){
                 </section>
                 </div>
                 
-                ${preview_progetto(project.title, project.subtitle, category + '/' + PROJECTS[category][0].split('.json')[0], project.preview)}
+                ${preview_progetto(project.title, project.metadata, category + '/' + PROJECTS[category][0].split('.json')[0], project.preview)}
             </div>`;
             for (var i = 1; i < pubblici.length; i+=2) {
                 project = pubblici[i];
                 html += `<div class="row">`;
-                html += preview_progetto(project.title, project.subtitle, category + '/' + PROJECTS[category][i].split('.json')[0], project.preview);
+                html += preview_progetto(project.title, project.metadata, category + '/' + PROJECTS[category][i].split('.json')[0], project.preview);
                 project = pubblici[i+1];
                 if (project) {
-                    html += preview_progetto(project.title, project.subtitle, category + '/' + PROJECTS[category][i+1].split('.json')[0], project.preview);
+                    html += preview_progetto(project.title, project.metadata, category + '/' + PROJECTS[category][i+1].split('.json')[0], project.preview);
                 }
                 html += `</div>`;
             }
