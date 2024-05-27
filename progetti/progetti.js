@@ -1,6 +1,7 @@
 PROJECTS = {
     'progetti-pubblici': [
-        'scavi-archeologici-di-roca.json',
+        'alloggio-anziani-calimera.json',
+        'scavi-archeologici-di-roca.json'
     ],
     'progetti-privati': [
         'ciao.json',

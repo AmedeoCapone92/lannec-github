@@ -112,6 +112,31 @@ function project_page(path){
                             </div>
                         </div>
                     </header>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="display: flex;">
+                        <a href="/progetti-pubblici"><img src="/images/thumbnail-3.png" class="thumbnail" alt=""></a>
+                        <a href="/gare"><img src="/images/thumbnail-2.png" class="thumbnail" alt=""></a>
+                        <a href="/progetti-privati"><img src="/images/thumbnail-1.png" class="thumbnail" alt=""></a>
+                    </div>
                 </div>
                 <div class="middle">
                     <img src="/${project.preview}" alt="${project.title}" style="width: 100%">

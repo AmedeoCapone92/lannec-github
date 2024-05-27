@@ -196,7 +196,7 @@ function news_page(){
         <a href="${news.link}" class="news">
             <h3>${news.title}</h3>
             <img src="/${news.preview}" alt="${news.title}" style="width:100%">
-            <p>${news.content}</p>
+            <p>${marked.marked(news.content)}</p>
         </a>`;
     };
     html += `</div></div></div>`;

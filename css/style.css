@@ -132,6 +132,7 @@ h6{
 
     .navbar .menu-icon {
         display: block;
+        margin-left: 50px;
     }
 }
 
@@ -216,6 +217,7 @@ h6{
     border: 1px solid #123743;
     aspect-ratio: 1/1;
     margin: 10px;
+    border-radius: 4px;
 }
 
 .grid-section {
@@ -446,3 +448,13 @@ h6{
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
+.thumbnail {
+    width: 40px;
+    border: 0.3px solid #123743;
+    margin-right: 10px;
+}
+
+img {
+    border-radius: 4px;
+}
