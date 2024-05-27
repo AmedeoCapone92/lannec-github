@@ -98,6 +98,10 @@ h6{
     cursor: pointer;
   }
 
+.navbar #phone-only-title {
+    display: none;
+}
+
 @media screen and (max-width: 576px) {
     .row.body {
         display: flex;
@@ -240,11 +244,6 @@ h6{
     opacity: 1;
 }
 
-.project-title-container {
-    position: relative;
-    z-index: 2; /* Higher z-index to ensure it is above the overlay */
-}
-
 .project-title, .project-subtitle {
     margin: 0;
 }
@@ -252,10 +251,12 @@ h6{
 
 .project-title-container {
     position: absolute;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 2; /* Higher z-index to ensure it is above the overlay */
 }
 
 .project-title {

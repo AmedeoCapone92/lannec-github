@@ -39,8 +39,6 @@ function projects_page(category, title){
     $('#menu-item-privati').removeClass('submenu-active');
     $('#menu-item-gare').removeClass('submenu-active');
 
-    // var project_filename = PROJECTS['progetti-publici'][0];
-
     Promise.all(PROJECTS[category].map(filename => fetchProject(category, filename)))
         .then(pubblici => {
             var project = pubblici[0];
@@ -75,6 +73,12 @@ function projects_page(category, title){
 }
 
 function project_page(path){
+    if (window.matchMedia("(max-width: 576px)").matches) {
+        $('#phone-only-title').show();
+    } else {
+        $('#phone-only-title').hide();
+    }
+
     var project_filename = path.split('/').pop() + '.json';
     var folder = path.split('/')[1];
     fetchProject(folder, project_filename)
