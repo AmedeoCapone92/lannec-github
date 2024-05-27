@@ -184,13 +184,13 @@ function activate_bands(run){
 
 
 function activate_animations(){
-    // if (hasTouchscreen()){
+    if (hasTouchscreen()){
         setTimeout(() => { activate_cube(true); }, 500);
         setTimeout(() => { activate_bands(true); }, 1000);
         setTimeout(() => { activate_sheet(true); }, 1500);
-    // } else {
-    //     activate_cube(false);
-    //     activate_bands(false);
-    //     activate_sheet(false);
-    // }
+    } else {
+        activate_cube(false);
+        activate_bands(false);
+        activate_sheet(false);
+    }
 }
