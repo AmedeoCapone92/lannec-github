@@ -471,3 +471,8 @@ h6{
 img {
     border-radius: 4px;
 }
+
+h4 {
+    margin-top: 10px !important;
+    margin-bottom: 3px !important;
+}

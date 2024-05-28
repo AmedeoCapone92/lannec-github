@@ -137,39 +137,40 @@ function home(){
 
     <!-- Content section goes second on small screens -->
     <div class="col-sm-6 col-12 content-section order-sm-first order-last">
-    <section id="mission">
-        <h2>OUR MISSION!</h2>
-        <p>
-        La missione è fare architettura e non edilizia, in tempi rapidi e con
-        l'uso di software all'avanguardia, trasporre nel contemporaneo i
-        principi di bellezza, solidità e funzionalità, attraverso la ricerca
-        tecnologica ed estetica continua, in dialogo con il corso dei tempi.
-        </p>
-        <p>
-        L'azienda lavora su tre rami, la progettazione per enti pubblici, la
-        partecipazione a gare d'appalto per imprese e l'esecuzione di commesse
-        medio-grandi per committenti privati. Lo studio affronta il processo
-        architettonico ed ingegneristico a tutto tondo, dall'analisi dei
-        fabbisogni con un approccio psicologico al collaudo finale delle opere
-        realizzate.
-        </p>
-    </section>
+        
+        <h4>Chi siamo</h4>
+        Lannec è uno studio professionale che si occupa di architettura, pianificazione urbana e servizi d’ingegneria civile ed ambientale, nato nel 2022. 
+        <br>
+        <h4>Vision</h4>
+        Lavoriamo quotidianamente per decifrare e mettere in atto le complicazioni del bello, in tempi rapidi e con l'uso di software all'avanguardia, trasporre nel contemporaneo i principi di bellezza, solidità e funzionalità, attraverso la ricerca tecnologica ed estetica continua, in dialogo con il corso dei tempi.
+        <br>
+        <h4>Mission</h4>
+        Lo studio lavora principalmente su tre rami, la progettazione per enti pubblici, la partecipazione a gare d'appalto per imprese e l'esecuzione di commesse medio-grandi per committenti privati e Società. Lo studio affronta processi complessi nel campo architettonico ed ingegneristico a tutto tondo, dall'analisi dei fabbisogni al collaudo finale delle opere realizzate attraverso il coordinamento di figure professionali specializzate.
+        <br>
+        <h4>Servizi</h4>
+        Accesso a bonus edilizi, pratiche edilizie, procedure paesaggistiche, appalti pubblici, partecipazione a bandi, efficientamento energetico, progettazione di strutture, direzione dei lavori, offerta economicamente più vantaggiosa, appalti integrati, pratiche catastali, perizie di stima, nuove costruzioni, ristrutturazioni, coordinamento per la sicurezza in fase di progettazione ed esecuzione, altro.
+        <br>
+        <br>
 
-    <section id="find-us">
-        <h2>FIND US!</h2>
-        <address>
-        <p>
-            <img src="/images/map-pin.svg" style="margin-right: 5px;" />Castri di Lecce, via Papa Giovanni
-            XXIII, 64 73020
-        </p>
-        <p><img src="/images/map-pin.svg" style="margin-right: 5px;" />Lecce, Via Duca d'Aosta, 44 73100</p>
-        <p>Phone: +39 328 5786003</p>
-        <p>C.F./P.Iva 05130990756</p>
-        <p>
-            Email: <a id="email-link" href="mailto:lannecstudio@pec.it">lannecstudio@pec.it</a>
-        </p>
-        </address>
-    </section>
+        <h3>Team</h3>
+        <h4>Fondatore e referente:</h4>
+        Arch. Amedeo Capone
+        <h4>Collaborazioni stabili:</h4> 
+        Arch. Andrea Marchettini, Ing. Giovanni delle Donne, Dott.ssa Alessia Orlando, Dott. Geol. Luigi Giorgio, Geom. P. Rollo.
+
+        <h4>Hanno lavorato con noi:</h4>
+        Orange Public Management, Arch. Enrico Durante, Arch. N. Conte, Geom. F. Nahi, Geom. A. Rubichi, Ing. C. Di Donfrancesco, Dott. M. Stasi, Ing. D. Centonze.
+
+        <h4>Contattaci!</h4>
+        <a id="email-link" href="mailto:info@lannec.it">info@lannec.it</a>
+
+
+        <h4>Dove siamo</h4>
+
+        <img src="/images/map-pin.svg" style="margin-right: 5px;" />Via Papa giovanni XXIII, 64
+        73020, Castri di Lecce (LE)<br>
+        <img src="/images/map-pin.svg" style="margin-right: 5px;" />Via Duca d’Aosta, 44
+        73100, Lecce (LE)
     </div>
 </div>  
 `;
