@@ -8,6 +8,7 @@ PROJECTS = {
         'villa-kale.json',
     ],
     'gare': [
-        'gara-nardo.json'
+        'gara-nardo.json',
+        'mensa-scuola-primaria.json'
     ],
 }
