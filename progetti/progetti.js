@@ -4,7 +4,8 @@ PROJECTS = {
         'scavi-archeologici-di-roca.json'
     ],
     'progetti-privati': [
-        'ciao.json',
+        'flat-renovation-londra.json',
+        'villa-kale.json',
     ],
     'gare': [
         'gara-nardo.json'
