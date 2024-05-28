@@ -17,19 +17,66 @@ function preview_progetto(title, metadata, link, preview){
     </div>`;
 }
 
+function left_menu(){
+    return `
+    <div class="left">
+        <header>
+            <a href="/" style="text-decoration: none">
+            <div style="display: flex; align-items: center;">
+                <div style="margin-right: 10px; width:30px"><img src="/images/logo.svg"></div>
+                <div style="flex: 1;">
+                    <h6 style="margin-bottom:0px">LANNEC STUDIO</h6>
+                </div>
+            </div>
+            </a>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="display: flex;">
+            <a href="/progetti-pubblici">
+                <img src="/images/thumbnail-3.png" class="thumbnail" id="thumbnail-image-3" alt="">
+            </a>
+            <a href="/gare">
+                <img src="/images/thumbnail-2.png" class="thumbnail" id="thumbnail-image-2" alt="">
+            </a>
+            <a href="/progetti-privati">
+                <img src="/images/thumbnail-1.png" class="thumbnail" id="thumbnail-image-1" alt="">
+            </a>
+        </div>
+    </div>`;
+}
+
 PROJECTS_PAGE_CONTENT = {
     'progetti-pubblici': `
-        <h2>Lorem Ipsum</h2>
-        <p>adskjna sddsajkas dkjn dsa</p>
-        <p>asd jnasd kjdnas kjadsn  ads.</p>`,
+        <p>Redazione di progetti di architettura, paesaggio, ingegneria civile ed ambientale ai livelli di fattibilità tecnico economica e progettazione esecutiva, direzione dei lavori e coordinamento per la sicurezza in fase di progettazione ed esecuzione per enti pubblici a partire dalla consulenza ed il supporto professionale per l’intercettazione di Eurofinanziamenti o finanziamenti locali, PNRR, POR, FEASR, GAL, etc.</p>
+        <p>Gestione di progetti complessi, progettazione integrata a partire da accurate analisi socio-economiche, ambientali, sviluppo di piani di gestione e coordinamento di attori specializzati per la.</p>
+        <p>Opere progettate nel periodo 2022-2024 circa 10 Mln.</p>`,
     'progetti-privati': `
-        <h2>Lorem Ipsum</h2>
-        <p>adskjna sddsajkas dkjn dsa</p>
-        <p>asd jnasd kjdnas kjadsn  ads.</p>`,
+        <p>Progettazione architettonica, paesaggistica, ingegneristica a tutto tondo, a partire da un approccio di tipo psicologico per indagare le esigenze del committente attraverso un percorso guidato. Gestione delle pratiche edilizie e coordinamento dei rapporti con le imprese esecutrici. Direzione dei Lavori e coordinamento della sicurezza, erogazione pagamenti, certificazioni di Agibilità, pratiche energetiche e catastali. Lo studio affronta il processo progettuale a tutto tondo vantando un’esperienza pluriennale sul campo, garantendo rapidità, efficacia, buona esecuzione ed il miglior rapporto qualità prezzo negli interessi del cliente. </p>`,
     'gare': `
-        <h2>Lorem Ipsum</h2>
-        <p>adskjna sddsajkas dkjn dsa</p>
-        <p>asd jnasd kjdnas kjadsn  ads.</p>`
+        <p>Partecipazione a Gare di Lavori, Servizi e Forniture per imprese e professionisti attraverso la redazione di offerte tecniche, economico-temporali ed amministrative. Lo studio garantisce un approccio specialistico ai criteri in base alle categorie e sottocategorie di pertinenza, per confezionare offerte sempre attuali grazie al monitoraggio continuo della tecnologia in ambito edile, civile, ed industriale. 
+        </p>
+        <p>
+        Lavori aggiudicati nel 2023 per circa 6,8 Mln.
+        </p>`
 }
 
 
@@ -38,9 +85,12 @@ function projects_page(category, title){
     $('#menu-item-about').removeClass('active');
     $('#menu-item-news').removeClass('active');
     $('#menu-item-projects').addClass('active');
-    $('#menu-item-pubblici').addClass('submenu-active');
-    $('#menu-item-privati').removeClass('submenu-active');
+    console.log('here', category);
+    $('#menu-item-progetti-pubblici').removeClass('submenu-active');
+    $('#menu-item-progetti-privati').removeClass('submenu-active');
     $('#menu-item-gare').removeClass('submenu-active');
+
+    $(`#menu-item-${category}`).addClass('submenu-active');
 
     Promise.all(PROJECTS[category].map(filename => fetchProject(category, filename)))
         .then(pubblici => {
@@ -103,49 +153,7 @@ function project_page(path){
             }
             var html = `
             <div class="col-12 project-container">
-                <div class="left">
-                    <header>
-                        <a href="/" style="text-decoration: none">
-                        <div style="display: flex; align-items: center;">
-                            <div style="margin-right: 10px; width:30px"><img src="/images/logo.svg"></div>
-                            <div style="flex: 1;">
-                                <h6 style="margin-bottom:0px">LANNEC STUDIO</h6>
-                            </div>
-                        </div>
-                        </a>
-                    </header>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div style="display: flex;">
-                        <a href="/progetti-pubblici">
-                            <img src="/images/thumbnail-3.png" class="thumbnail" id="thumbnail-image-3" alt="">
-                        </a>
-                        <a href="/gare">
-                            <img src="/images/thumbnail-2.png" class="thumbnail" id="thumbnail-image-2" alt="">
-                        </a>
-                        <a href="/progetti-privati">
-                            <img src="/images/thumbnail-1.png" class="thumbnail" id="thumbnail-image-1" alt="">
-                        </a>
-                    </div>
-                </div>
+                ${left_menu()}
                 <div class="middle">
                     <img src="/${project.preview}" alt="${project.title}" style="width: 100%">
                     <br><br><br>
