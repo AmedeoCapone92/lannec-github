@@ -105,12 +105,14 @@ function project_page(path){
             <div class="col-12 project-container">
                 <div class="left">
                     <header>
+                        <a href="/" style="text-decoration: none">
                         <div style="display: flex; align-items: center;">
                             <div style="margin-right: 10px; width:30px"><img src="/images/logo.svg"></div>
                             <div style="flex: 1;">
                                 <h6 style="margin-bottom:0px">LANNEC STUDIO</h6>
                             </div>
                         </div>
+                        </a>
                     </header>
                     <br>
                     <br>
@@ -133,9 +135,15 @@ function project_page(path){
                     <br>
                     <br>
                     <div style="display: flex;">
-                        <a href="/progetti-pubblici"><img src="/images/thumbnail-3.png" class="thumbnail" alt=""></a>
-                        <a href="/gare"><img src="/images/thumbnail-2.png" class="thumbnail" alt=""></a>
-                        <a href="/progetti-privati"><img src="/images/thumbnail-1.png" class="thumbnail" alt=""></a>
+                        <a href="/progetti-pubblici">
+                            <img src="/images/thumbnail-3.png" class="thumbnail" id="thumbnail-image-3" alt="">
+                        </a>
+                        <a href="/gare">
+                            <img src="/images/thumbnail-2.png" class="thumbnail" id="thumbnail-image-2" alt="">
+                        </a>
+                        <a href="/progetti-privati">
+                            <img src="/images/thumbnail-1.png" class="thumbnail" id="thumbnail-image-1" alt="">
+                        </a>
                     </div>
                 </div>
                 <div class="middle">

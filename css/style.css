@@ -453,7 +453,20 @@ h6{
     width: 40px;
     border: 0.3px solid #123743;
     margin-right: 10px;
+    transition: all 0.3s ease; /* Smooth transition */
+    border-radius: 2px;
 }
+
+#thumbnail-image-1:hover {
+    content: url("/images/thumbnail-1-hover.png");
+}
+#thumbnail-image-2:hover {
+    content: url("/images/thumbnail-2-hover.png");
+}
+#thumbnail-image-3:hover {
+    content: url("/images/thumbnail-3-hover.png");
+}
+
 
 img {
     border-radius: 4px;
