@@ -32,6 +32,10 @@ def serve_projects(filename):
 def robots():
     return send_from_directory('.', 'robots.txt')
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
+
 
 # Catch-all route to serve index.html for any other URL
 @app.route('/<path:path>')
