@@ -34,15 +34,6 @@
         
         <meta name="google-site-verification" content="pmFoKiIT4OQYGcU45ZC7q0KVvXvJG-BHuF0IulzKXZc" />
     </head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4951M106X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-E4951M106X');
-    </script>
     <body>
         <div class="container">
             <!-- Top navigation-->
@@ -75,6 +66,13 @@
             
             <div id="body"></div>         
 
+        </div>
+
+        <!-- Cookie Alert -->
+        <div id="cookieAlert">
+            <p>Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Cliccando su "Accetta", acconsenti all'uso dei cookie per analisi.</p>
+            <button id="acceptCookies">Accetta</button>
+            <button id="rejectCookies" class="reject">Rifiuta</button>
         </div>
         <script src="/js/lib/jquery-3.7.0.js"></script>
         <script src="/js/lib/bootstrap.bundle.min.js"></script>

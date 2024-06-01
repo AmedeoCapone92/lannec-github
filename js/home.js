@@ -1,6 +1,8 @@
 
 
 $(document).ready(function() {
+
+    cookies();
     const menuIcon = document.querySelector('.menu-icon');
     const menu = document.querySelector('.menu');
 
@@ -179,4 +181,55 @@ function news_page(){
     };
     html += `</div></div></div>`;
     $('#body').html(html);
+}
+
+
+
+function cookies(){
+    // Check if the user has already made a choice
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function setCookie(name, value, days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        document.cookie = name + "=" + value + "; path=/; expires=" + date.toUTCString();
+    }
+
+    function loadGoogleAnalytics() {
+        // Load Google Analytics script
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E4951M106X';
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E4951M106X');
+    }
+
+    // Show cookie alert if no choice has been made
+    const userChoice = getCookie('userConsent');
+    if (!userChoice) {
+        document.getElementById('cookieAlert').style.display = 'block';
+    } else if (userChoice === 'accepted') {
+        loadGoogleAnalytics();
+    }
+
+    // Handle user choice
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+        setCookie('userConsent', 'accepted', 365);
+        document.getElementById('cookieAlert').style.display = 'none';
+        loadGoogleAnalytics();
+    });
+
+    document.getElementById('rejectCookies').addEventListener('click', function() {
+        setCookie('userConsent', 'rejected', 365);
+        document.getElementById('cookieAlert').style.display = 'none';
+    });
 }
