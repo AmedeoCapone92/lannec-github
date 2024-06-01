@@ -22,10 +22,10 @@ function left_menu(){
     <div class="left">
         <header>
             <a href="/" style="text-decoration: none">
-            <div style="display: flex; align-items: center;">
-                <div style="margin-right: 10px; width:30px"><img src="/images/logo.svg"></div>
+            <div style="display: flex; align-items: center;margin-top:18px;">
+                <div style="margin-right: 10px; width:30px"><img src="/images/logo.svg" alt="Lannec logo"></div>
                 <div style="flex: 1;">
-                    <h6 style="margin-bottom:0px">LANNEC STUDIO</h6>
+                    <h1 style="margin-bottom:0px; font-size:1.2em;margin-top:0px !important;">LANNEC STUDIO</h1>
                 </div>
             </div>
             </a>
@@ -52,13 +52,13 @@ function left_menu(){
         <br>
         <div style="display: flex;">
             <a href="/progetti-pubblici">
-                <img src="/images/thumbnail-3.png" class="thumbnail" id="thumbnail-image-3" alt="">
+                <img src="/images/thumbnail-3.png" class="thumbnail" id="thumbnail-image-3" alt="Progetti Pubblici link">
             </a>
             <a href="/gare">
-                <img src="/images/thumbnail-2.png" class="thumbnail" id="thumbnail-image-2" alt="">
+                <img src="/images/thumbnail-2.png" class="thumbnail" id="thumbnail-image-2" alt="Gare link">
             </a>
             <a href="/progetti-privati">
-                <img src="/images/thumbnail-1.png" class="thumbnail" id="thumbnail-image-1" alt="">
+                <img src="/images/thumbnail-1.png" class="thumbnail" id="thumbnail-image-1" alt="Progetti privati link">
             </a>
         </div>
     </div>`;
@@ -119,6 +119,7 @@ function projects_page(category, title){
                 html += `</div>`;
             }
             $('#body').html(html);
+            document.title = 'Lannec Studio - ' + title;
         })
         .catch(error => {
             console.error("Error fetching or parsing JSON files:", error);
@@ -142,7 +143,7 @@ function project_page(path){
                     content += `<p>${marked.marked(c.content)}</p>`;
                 }
                 else if (c.type == 'image') {
-                    content += `<img src="/${c.content}" style="width: 100%">`;
+                    content += `<img src="/${c.content}" style="width: 100%" alt="${c.content}">`;
                 }
             });
             var metadata = '';
@@ -155,7 +156,7 @@ function project_page(path){
             <div class="col-12 project-container">
                 ${left_menu()}
                 <div class="middle">
-                    <img src="/${project.preview}" alt="${project.title}" style="width: 100%">
+                    <img src="/${project.preview}" alt="${project.title}" style="width: 100%" alt="${project.preview}">
                     <br><br><br>
                     <h2>${project.title}</h2>
                     <p style="font-size:1.2em; color: gray">${project.subtitle}</p>
@@ -170,6 +171,7 @@ function project_page(path){
                 </div>
             </div>
             `;
-            $('#body').html(html)
+            $('#body').html(html);
+            document.title = 'Lannec Studio - ' + project.title;
         });
 }

@@ -80,7 +80,6 @@ function show_home_grid_projects_images(project_type){
             fetchProject(project_type, project_filename)
             .then(project => {
                 var preview = '/' + project.preview;
-                // Create an <img> element with a fade-in effect
                 var img = $('<img>')
                 .attr('src', preview) // Set the source of the image
                 .css({

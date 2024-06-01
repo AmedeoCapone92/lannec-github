@@ -33,16 +33,6 @@ def robots():
     return send_from_directory('.', 'robots.txt')
 
 
-@app.route('/cube.html')
-def cube():
-    return send_from_directory('.', 'cube.html')
-
-
-@app.route('/cube-gpt.html')
-def cubegpt():
-    return send_from_directory('.', 'cube-gpt.html')
-
-
 # Catch-all route to serve index.html for any other URL
 @app.route('/<path:path>')
 def catch_all(path):
