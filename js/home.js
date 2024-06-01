@@ -137,13 +137,13 @@ function home(){
 
     <!-- Content section goes second on small screens -->
     <div class="col-sm-6 col-12 content-section order-sm-first order-last">
-        <h4>Mission</h4>
+        <h2>Mission</h2>
         <p>Lo studio lavora principalmente su tre rami, la progettazione per enti pubblici, la partecipazione a gare d'appalto per imprese e l'esecuzione di commesse medio-grandi per committenti privati e Società. Lo studio affronta processi complessi nel campo architettonico ed ingegneristico a tutto tondo, dall'analisi dei fabbisogni al collaudo finale delle opere realizzate attraverso il coordinamento di figure professionali specializzate.</p>
         
-        <h4 style="padding-bottom:3px;">Contattaci!</h4>
+        <h2 style="padding-bottom:3px;">Contattaci!</h4>
         <p><a id="email-link" href="mailto:info@lannec.it">info@lannec.it</a></p>
 
-        <h4 style="padding-bottom:10px;">Dove siamo</h4>
+        <h2 style="padding-bottom:10px;">Dove siamo</h4>
         <p><img src="/images/map-pin.svg" style="margin-right: 5px;" />Via Papa giovanni XXIII, 64
         73020, Castri di Lecce (LE)</p>
         <p><img src="/images/map-pin.svg" style="margin-right: 5px;" />Via Duca d’Aosta, 44
@@ -166,7 +166,7 @@ function news_page(){
     var html = `<div class="row">
         <div class="col-sm-2 col-md-3 col-0"></div>
         <div class="col-sm-8 col-md-6 col-12 content-section">
-            <h1>News</h1><br><br>
+            <h2>News</h1><br><br>
             <div class="news-container">`;
     for (var i = 0; i < NEWS.length; i++) {
         var news = NEWS[i];
