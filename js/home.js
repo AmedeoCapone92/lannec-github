@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-    cookies();
+    // cookies();
     const menuIcon = document.querySelector('.menu-icon');
     const menu = document.querySelector('.menu');
 

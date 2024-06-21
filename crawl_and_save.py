@@ -6,9 +6,9 @@ from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 
 BASE_URL = 'http://localhost:5002'  # Change this if your server runs on a different address
-OUTPUT_DIR = 'dist'
+OUTPUT_DIR = 'docs'
 SITEMAP_PATH = 'sitemap.xml'
-STATIC_DIRS = ['js', 'css', 'images']
+STATIC_DIRS = ['js', 'css', 'images', 'progetti']
 STATIC_FILES = ['robots.txt', 'CNAME', 'sitemap.xml']
 
 # Remove all files and directories in OUTPUT_DIR
@@ -62,7 +62,7 @@ def copy_static_files():
         dst_file = os.path.join(OUTPUT_DIR, file_name)
         if os.path.exists(src_file):
             shutil.copy2(src_file, dst_file)
-            
+
 
 async def main():
     async with async_playwright() as p:
