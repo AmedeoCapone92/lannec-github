@@ -9,6 +9,7 @@ BASE_URL = 'http://localhost:5002'  # Change this if your server runs on a diffe
 OUTPUT_DIR = 'dist'
 SITEMAP_PATH = 'sitemap.xml'
 STATIC_DIRS = ['js', 'css', 'images']
+STATIC_FILES = ['robots.txt', 'CNAME', 'sitemap.xml']
 
 # Remove all files and directories in OUTPUT_DIR
 if os.path.exists(OUTPUT_DIR):
@@ -56,6 +57,12 @@ def copy_static_files():
         dst_dir = os.path.join(OUTPUT_DIR, dir_name)
         if os.path.exists(src_dir):
             shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
+    for file_name in STATIC_FILES:
+        src_file = os.path.join(os.getcwd(), file_name)
+        dst_file = os.path.join(OUTPUT_DIR, file_name)
+        if os.path.exists(src_file):
+            shutil.copy2(src_file, dst_file)
+            
 
 async def main():
     async with async_playwright() as p:
