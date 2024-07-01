@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lannec.it/chi-siamo</loc>
+    <loc>https://lannec.it/chi-siamo/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -19,62 +19,62 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lannec.it/progetti-pubblici</loc>
+    <loc>https://lannec.it/progetti-pubblici/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lannec.it/progetti-privati</loc>
+    <loc>https://lannec.it/progetti-privati/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lannec.it/gare</loc>
+    <loc>https://lannec.it/gare/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lannec.it/notizie</loc>
+    <loc>https://lannec.it/notizie/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <!-- Add more URLs for other pages -->
   <url>
-    <loc>https://lannec.it/progetti-pubblici/alloggio-anziani-calimera</loc>
+    <loc>https://lannec.it/progetti-pubblici/alloggio-anziani-calimera/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lannec.it/progetti-pubblici/scavi-archeologici-di-roca</loc>
+    <loc>https://lannec.it/progetti-pubblici/scavi-archeologici-di-roca/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lannec.it/progetti-privati/flat-renovation-londra</loc>
+    <loc>https://lannec.it/progetti-privati/flat-renovation-londra/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lannec.it/progetti-privati/villa-kale</loc>
+    <loc>https://lannec.it/progetti-privati/villa-kale/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lannec.it/gare/gara-nardo</loc>
+    <loc>https://lannec.it/gare/gara-nardo/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lannec.it/gare/mensa-scuola-primaria</loc>
+    <loc>https://lannec.it/gare/mensa-scuola-primaria/</loc>
     <lastmod>2024-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
