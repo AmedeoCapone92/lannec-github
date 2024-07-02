@@ -5,7 +5,7 @@ marked.setOptions({
 function preview_progetto(title, metadata, link, preview){
     return `
     <div class="col-sm-6 col-12 grid-section">
-        <a href="/${link}">
+        <a href="/${link}/">
         <div class="preview-container" style="background-image: url('/${preview}')">
             <div class="project-title-container">
                 <div class="project-title">${title}</div>
@@ -51,13 +51,13 @@ function left_menu(){
         <br>
         <br>
         <div style="display: flex;">
-            <a href="/progetti-pubblici">
+            <a href="/progetti-pubblici/">
                 <img src="/images/thumbnail-3.png" class="thumbnail" id="thumbnail-image-3" alt="Progetti Pubblici link">
             </a>
-            <a href="/gare">
+            <a href="/gare/">
                 <img src="/images/thumbnail-2.png" class="thumbnail" id="thumbnail-image-2" alt="Gare link">
             </a>
-            <a href="/progetti-privati">
+            <a href="/progetti-privati/">
                 <img src="/images/thumbnail-1.png" class="thumbnail" id="thumbnail-image-1" alt="Progetti privati link">
             </a>
         </div>
@@ -132,8 +132,7 @@ function project_page(path){
     } else {
         $('#phone-only-title').hide();
     }
-
-    var project_filename = path.split('/').pop() + '.json';
+    var project_filename = path.slice(0, -1).split('/').pop() + '.json';
     var folder = path.split('/')[1];
     fetchProject(folder, project_filename)
         .then(project => {

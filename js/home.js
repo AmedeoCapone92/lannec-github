@@ -14,15 +14,15 @@ $(document).ready(function() {
     if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
         $('#body').html(home());
         activate_animations();
-    } else if (window.location.pathname == '/chi-siamo') {
+    } else if (window.location.pathname == '/chi-siamo/') {
         $('#body').html(about());
-    } else if (window.location.pathname == '/progetti-pubblici') {
-        projects_page('progetti-pubblici', 'Progetti Pubblici');
-    } else if (window.location.pathname == '/progetti-privati') {
+    } else if (window.location.pathname == '/progetti-pubblici/') {
+        projects_page('progetti-pubblici', 'Progetti Pubblici/');
+    } else if (window.location.pathname == '/progetti-privati/') {
         projects_page('progetti-privati', 'Progetti Privati');
-    } else if (window.location.pathname == '/gare') {
+    } else if (window.location.pathname == '/gare/') {
         projects_page('gare', 'Gare');
-    } else if (window.location.pathname == '/notizie') {
+    } else if (window.location.pathname == '/notizie/') {
         news_page();
     } else if (window.location.pathname.startsWith('/progetti-pubblici/') || window.location.pathname.startsWith('/progetti-privati/') || window.location.pathname.startsWith('/gare/')){
         project_page(window.location.pathname);
@@ -115,12 +115,12 @@ function home(){
         <div class="grid-container">
             <div id="grid-cell-1" class="grid-cell"></div>
             <div id="grid-cell-2" class="grid-cell"></div>
-            <a href="/gare">
+            <a href="/gare/">
                 <div id="grid-cell-3" class="grid-cell border-right" style="position: relative">
                     ${grid_cell_gare()}
                 </div>
             </a>
-            <a href="/progetti-pubblici">
+            <a href="/progetti-pubblici/">
                 <div id="grid-cell-4" class="grid-cell">
                     ${grid_cell_progetti_pubblici()}
                 </div>
@@ -128,7 +128,7 @@ function home(){
             <div id="grid-cell-5" class="grid-cell"></div>
             <div id="grid-cell-6" class="grid-cell border-right"></div>
             <div id="grid-cell-7" class="grid-cell border-down"></div>
-            <a href="/progetti-privati" style="text-decoration: none;">
+            <a href="/progetti-privati/" style="text-decoration: none;">
                 <div id="grid-cell-8" class="grid-cell border-down">
                     ${grid_cell_progetti_privati()}
                 </div>
