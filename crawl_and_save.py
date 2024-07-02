@@ -9,7 +9,7 @@ BASE_URL = 'http://localhost:5002'  # Change this if your server runs on a diffe
 OUTPUT_DIR = 'docs'
 SITEMAP_PATH = 'sitemap.xml'
 STATIC_DIRS = ['js', 'css', 'images', 'progetti']
-STATIC_FILES = ['robots.txt', 'CNAME', 'sitemap.xml']
+STATIC_FILES = ['robots.txt', 'CNAME', 'sitemap.xml', 'favicon.ico']
 
 # Remove all files and directories in OUTPUT_DIR
 if os.path.exists(OUTPUT_DIR):
