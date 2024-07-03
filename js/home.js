@@ -17,7 +17,7 @@ $(document).ready(function() {
     } else if (window.location.pathname == '/chi-siamo/') {
         $('#body').html(about());
     } else if (window.location.pathname == '/progetti-pubblici/') {
-        projects_page('progetti-pubblici', 'Progetti Pubblici/');
+        projects_page('progetti-pubblici', 'Progetti Pubblici');
     } else if (window.location.pathname == '/progetti-privati/') {
         projects_page('progetti-privati', 'Progetti Privati');
     } else if (window.location.pathname == '/gare/') {
