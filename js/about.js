@@ -10,9 +10,9 @@ function about(){
 
     return `
 <div class="row">
-    <div class="col-sm-2 col-md-3 col-0">
-        ${left_menu()}
-    </div>
+<div class="col-sm-2 col-md-3 d-none d-md-block">
+    ${left_menu()}
+</div>
     <div class="col-sm-8 col-md-6 col-12 content-section">    
         <h2 class="chi-siamo-h2" >Chi siamo</h2>
         Lannec è uno studio professionale che si occupa di architettura, pianificazione urbana e servizi d’ingegneria civile ed ambientale, nato nel 2022. 
