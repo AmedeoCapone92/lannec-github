@@ -169,17 +169,18 @@ function news_page(){
         <div class="col-sm-2 col-md-3 col-0"></div>
         <div class="col-sm-8 col-md-6 col-12 content-section">
             <h2>Notizie</h2><br><br>
-            <div class="news-container">`;
+        `;
     for (var i = 0; i < NEWS.length; i++) {
         var news = NEWS[i];
-        html += `
+        html += `<div class="news-container">
         <a href="${news.link}" class="news">
             <h3>${news.title}</h3>
             <img src="/${news.preview}" alt="${news.title}" style="width:100%">
             <p>${marked.marked(news.content)}</p>
-        </a>`;
+        </a>
+        </div>`;
     };
-    html += `</div></div></div>`;
+    html += `</div></div>`;
     $('#body').html(html);
 }
 
