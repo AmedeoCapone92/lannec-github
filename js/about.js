@@ -29,10 +29,10 @@ function about(){
         <h3 class="chi-siamo-h3">Fondatore e referente:</h3>
         Arch. Amedeo Capone
         <h3 class="chi-siamo-h3">Collaborazioni stabili:</h3> 
-        Arch. Andrea Marchettini, Ing. Giovanni delle Donne, Dott.ssa Alessia Orlando, Dott. Geol. Luigi Giorgio, Geom. P. Rollo.
+        Arch. Andrea Marchettini, Ing. Giovanni delle Donne, Dott. Geol. Luigi Giorgio, Geom. P. Rollo.
 
         <h3 class="chi-siamo-h3">Hanno lavorato con noi:</h3>
-        Orange Public Management, Arch. Enrico Durante, Arch. N. Conte, Geom. F. Nahi, Geom. A. Rubichi, Ing. C. Di Donfrancesco, Dott. M. Stasi, Ing. D. Centonze.
+        Orange Public Management, Arch. Enrico Durante, Arch. N. Conte, Geom. F. Nahi, Geom. A. Rubichi, Ing. C. Di Donfrancesco, Dott. M. Stasi, Ing. D. Centonze, Dott.ssa Alessia Orlando, Arch. Roberto de Giorgi.
 
     </div>
     <div class="col-sm-2 col-md-3 col-0" style="border-left: 1px solid black;">
