@@ -142,7 +142,7 @@ function project_page(path){
                     content += `<p>${marked.marked(c.content)}</p>`;
                 }
                 else if (c.type == 'image') {
-                    content += `<img src="/${c.content}" style="width: 100%" alt="${c.content}">`;
+                    content += `<img src="/${c.content}" class="project-img" style="width: 100%" alt="${c.content}">`;
                 }
             });
             var metadata = '';

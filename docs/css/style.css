@@ -343,28 +343,28 @@ h6{
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
-    #123743 0px,
-    #123743 25px,
-    rgb(212, 212, 212) 25px,
-    rgb(225, 225, 225) 50px,
-    #123743 50px,
-    #123743 75px,
-    rgb(225, 225, 225) 75px,
-    white 100px,
-    #123743 100px,
-    #123743 125px,
-    white 125px,
-    white 150px,
-    #123743 150px,
-    #123743 175px,
-    white 175px,
-    white 200px
+        #123743 0%,
+        #123743 12.5%,
+        rgb(212, 212, 212) 12.5%,
+        rgb(225, 225, 225) 25%,
+        #123743 25%,
+        #123743 37.5%,
+        rgb(225, 225, 225) 37.5%,
+        white 50%,
+        #123743 50%,
+        #123743 62.5%,
+        white 62.5%,
+        white 75%,
+        #123743 75%,
+        #123743 87.5%,
+        white 87.5%,
+        white 100%
     );
     position: absolute;
     top: 0;
     left: 0;
     transition: transform 0.7s;
-  }
+}
   
   .label-bands {
     width: 100%;
@@ -515,4 +515,9 @@ h6{
 }
 #cookieAlert button.reject {
     background-color: #f44336;
+}
+
+.project-img {
+    margin-top:5px;
+    margin-bottom: 5px;
 }

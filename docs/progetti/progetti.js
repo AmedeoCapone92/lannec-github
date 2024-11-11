@@ -9,6 +9,7 @@ PROJECTS = {
     ],
     'gare': [
         'gara-nardo.json',
-        'mensa-scuola-primaria.json'
+        'mensa-scuola-primaria.json',
+        'gara-lecce-carlo-v.json'
     ],
 }
