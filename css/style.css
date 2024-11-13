@@ -288,11 +288,15 @@ h6{
 .project-container {
     display: flex;
 }
+
 .project-container .left, .project-container .right {
     flex-basis: 30%;
     flex-shrink: 1;
-
+    overflow-y: auto; /* Enables vertical scroll */
+    height: calc(100vh - 120px); /* Ensure the height matches the middle div */
+    padding: 15px; /* Optional, for better spacing */
 }
+
 .project-container .middle {
     flex-grow: 1;
     flex-shrink: 3;
