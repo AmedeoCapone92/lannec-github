@@ -20,6 +20,10 @@ def serve_images(filename):
 def serve_css(filename):
     return send_from_directory('css', filename)
 
+@app.route('/fonts/<path:filename>')
+def serve_fonts(filename):
+    return send_from_directory('fonts', filename)
+
 @app.route('/js/<path:filename>')
 def serve_js(filename):
     return send_from_directory('js', filename)

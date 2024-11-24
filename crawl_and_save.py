@@ -8,7 +8,7 @@ from playwright.async_api import async_playwright
 BASE_URL = 'http://localhost:5002'  # Change this if your server runs on a different address
 OUTPUT_DIR = 'docs'
 SITEMAP_PATH = 'sitemap.xml'
-STATIC_DIRS = ['js', 'css', 'images', 'progetti']
+STATIC_DIRS = ['js', 'css', 'images', 'progetti', 'fonts']
 STATIC_FILES = ['robots.txt', 'CNAME', 'sitemap.xml', 'favicon.ico']
 
 # Remove all files and directories in OUTPUT_DIR
