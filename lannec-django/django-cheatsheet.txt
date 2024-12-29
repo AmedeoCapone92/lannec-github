@@ -1,0 +1,8 @@
+mkdir lannec-django
+django-admin startproject mysite lannec-django
+python manage.py runserver
+python manage.py startapp lannec
+python manage.py migrate
+python manage.py makemigrations lannec
+python manage.py shell
+python manage.py createsuperuser
