@@ -1,23 +1,10 @@
 from django.db import models
 
 
-# class Content(models.Model):
-#     CONTENT_TYPE_CHOICES = [
-#         ('text', 'Text'),
-#         ('image', 'Image'),
-#     ]
-#     type = models.CharField(max_length=10, choices=CONTENT_TYPE_CHOICES, blank=True, null=True)
-#     content = models.TextField(blank=True, null=True)
-
-#     def __str__(self):
-#         return f"{self.type or 'Content'}: {self.content[:30] if self.content else ''}"
-
-
 class Gara(models.Model):
     title = models.CharField(max_length=255)
     subtitle = models.TextField(blank=True, null=True)
     preview = models.ImageField(upload_to='gare/', blank=True, null=True)
-    # content = models.ManyToManyField('Content', related_name='gare', blank=True)
 
     def __str__(self):
         return self.title
@@ -45,3 +32,16 @@ class Metadata(models.Model):
 
     # def __str__(self):
     #     return f"Metadata for {self.gara.title}"
+
+
+class Content(models.Model):
+    gara = models.ForeignKey(Gara, on_delete=models.CASCADE)
+    CONTENT_TYPE_CHOICES = [
+        ('text', 'Text'),
+        ('image', 'Image'),
+    ]
+    type = models.CharField(max_length=10, choices=CONTENT_TYPE_CHOICES, blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.type or 'Content'}: {self.content[:30] if self.content else ''}"
