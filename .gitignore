@@ -1,1 +1,5 @@
 .DS_Store
+__pycache__
+lannec-django/db.sqlite3
+lannec-django/lannec/migrations
+lannec-django/media
